@@ -13,8 +13,8 @@ const PublicHeader = ({ onLoginClick, onRegisterClick, onBackToLanding }) => {
 
   // Desktop download handler
   const handleDownloadDesktop = () => {
-    // GitHub releases URL - Update this with your actual release URL
-    const downloadUrl = 'https://github.com/YOUR_USERNAME/GorselDonusturucu/releases/latest/download/Gorsel-Donusturucu-Setup.exe';
+    // GitHub releases URL
+    const downloadUrl = 'https://github.com/onurtau/gorseldonusturucu/releases/download/v1.0.0/GorselDonusturucu-Setup-1.0.0.exe';
     window.open(downloadUrl, '_blank');
   };
 
