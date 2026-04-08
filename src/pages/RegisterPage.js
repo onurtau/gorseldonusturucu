@@ -5,7 +5,7 @@ import { z } from 'zod';
 import { User, Mail, Lock, Eye, EyeOff, UserPlus, Loader2, AlertCircle, CheckCircle2, Globe, ArrowLeft } from 'lucide-react';
 import useAuthStore from '../store/useAuthStore';
 import { useLanguage } from '../contexts/LanguageContext';
-import logo from '../assets/logo.svg';
+import logo from '../assets/logo.png';
 
 const RegisterPage = ({ onSwitchToLogin, onBackToLanding }) => {
   const { t, language, changeLanguage } = useLanguage();

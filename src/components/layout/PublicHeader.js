@@ -3,7 +3,7 @@ import { ImageIcon, Sparkles, Globe, ArrowLeft, Download } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import useAuthStore from '../../store/useAuthStore';
 import * as trialManager from '../../services/trialManager';
-import logo from '../../assets/logo.svg';
+import logo from '../../assets/logo.png';
 
 const PublicHeader = ({ onLoginClick, onRegisterClick, onBackToLanding }) => {
   const { t, language, changeLanguage } = useLanguage();

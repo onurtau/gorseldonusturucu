@@ -5,7 +5,7 @@ import { z } from 'zod';
 import { Mail, ArrowLeft, Loader2, CheckCircle2, AlertCircle, Globe } from 'lucide-react';
 import useAuthStore from '../store/useAuthStore';
 import { useLanguage } from '../contexts/LanguageContext';
-import logo from '../assets/logo.svg';
+import logo from '../assets/logo.png';
 
 const ForgotPasswordPage = ({ onBackToLogin, onBackToLanding }) => {
   const [emailSent, setEmailSent] = useState(false);

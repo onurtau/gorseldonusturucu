@@ -3,7 +3,7 @@ import { ImageIcon, Sparkles, Settings, Crown, Home, User, LogOut, ChevronDown }
 import useAppStore from '../store/useAppStore';
 import useAuthStore from '../store/useAuthStore';
 import { useLanguage } from '../contexts/LanguageContext';
-import logo from '../assets/logo.svg';
+import logo from '../assets/logo.png';
 
 const Header = React.memo(() => {
   const { license, toggleLicenseModal, toggleSettingsModal, ui, setActiveView } = useAppStore();

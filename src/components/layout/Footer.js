@@ -1,7 +1,7 @@
 import React from 'react';
 import { Mail, Github, Twitter, Linkedin } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
-import logo from '../../assets/logo.svg';
+import logo from '../../assets/logo.png';
 
 const Footer = () => {
   const { t } = useLanguage();

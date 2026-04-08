@@ -5,7 +5,7 @@ import { z } from 'zod';
 import { Mail, Lock, Eye, EyeOff, LogIn, Loader2, AlertCircle, Globe, ArrowLeft } from 'lucide-react';
 import useAuthStore from '../store/useAuthStore';
 import { useLanguage } from '../contexts/LanguageContext';
-import logo from '../assets/logo.svg';
+import logo from '../assets/logo.png';
 
 const LoginPage = ({ onSwitchToRegister, onForgotPassword, onBackToLanding }) => {
   const [showPassword, setShowPassword] = useState(false);
