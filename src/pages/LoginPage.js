@@ -5,6 +5,7 @@ import { z } from 'zod';
 import { Mail, Lock, Eye, EyeOff, LogIn, Loader2, AlertCircle, Globe, ArrowLeft } from 'lucide-react';
 import useAuthStore from '../store/useAuthStore';
 import { useLanguage } from '../contexts/LanguageContext';
+import logo from '../assets/logo.svg';
 
 const LoginPage = ({ onSwitchToRegister, onForgotPassword, onBackToLanding }) => {
   const [showPassword, setShowPassword] = useState(false);
@@ -86,7 +87,7 @@ const LoginPage = ({ onSwitchToRegister, onForgotPassword, onBackToLanding }) =>
         {/* Logo/Header */}
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center w-44 h-44 mb-6">
-            <img src={process.env.PUBLIC_URL + '/logo.svg'} alt="Görsel Dönüştürücü" className="w-full h-full drop-shadow-lg" />
+            <img src={logo} alt="Görsel Dönüştürücü" className="w-full h-full drop-shadow-lg" />
           </div>
           <h1 className="text-3xl font-bold text-gray-900 mb-2">{t('auth.login.welcome')}</h1>
           <p className="text-gray-600">{t('auth.login.subtitle')}</p>

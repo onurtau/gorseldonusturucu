@@ -3,6 +3,7 @@ import { ImageIcon, Sparkles, Settings, Crown, Home, User, LogOut, ChevronDown }
 import useAppStore from '../store/useAppStore';
 import useAuthStore from '../store/useAuthStore';
 import { useLanguage } from '../contexts/LanguageContext';
+import logo from '../assets/logo.svg';
 
 const Header = React.memo(() => {
   const { license, toggleLicenseModal, toggleSettingsModal, ui, setActiveView } = useAppStore();
@@ -38,7 +39,7 @@ const Header = React.memo(() => {
               onClick={() => setActiveView('home')}
               className="flex items-center space-x-2.5 hover:opacity-80 transition-opacity"
             >
-              <img src={process.env.PUBLIC_URL + '/logo.svg'} alt="Görsel Dönüştürücü" className="w-[60px] h-[60px]" />
+              <img src={logo} alt="Görsel Dönüştürücü" className="w-[60px] h-[60px]" />
               <div>
                 <h1 className="text-lg font-bold gradient-text flex items-center gap-1.5">
                   {t('header.title')}
