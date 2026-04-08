@@ -3,7 +3,7 @@ import { ImageIcon, Sparkles, Globe, ArrowLeft, Download } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import useAuthStore from '../../store/useAuthStore';
 import * as trialManager from '../../services/trialManager';
-import logo from '../../assets/logo.png';
+import { logoBase64 } from '../../assets/logoBase64';
 
 const PublicHeader = ({ onLoginClick, onRegisterClick, onBackToLanding }) => {
   const { t, language, changeLanguage } = useLanguage();
@@ -38,7 +38,7 @@ const PublicHeader = ({ onLoginClick, onRegisterClick, onBackToLanding }) => {
             )}
             
             <div className="flex items-center space-x-1.5">
-              <img src={logo} alt="Görsel Dönüştürücü" className="w-[60px] h-[60px]" />
+              <img src={logoBase64} alt="Görsel Dönüştürücü" className="w-[60px] h-[60px]" />
               <div>
                 <h1 className="text-lg font-bold gradient-text flex items-center gap-1.5">
                   {t('header.title')}
