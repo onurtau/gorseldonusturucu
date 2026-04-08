@@ -86,7 +86,7 @@ const LoginPage = ({ onSwitchToRegister, onForgotPassword, onBackToLanding }) =>
         {/* Logo/Header */}
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center w-44 h-44 mb-6">
-            <img src="/logo.svg" alt="Görsel Dönüştürücü" className="w-full h-full drop-shadow-lg" />
+            <img src={process.env.PUBLIC_URL + '/logo.svg'} alt="Görsel Dönüştürücü" className="w-full h-full drop-shadow-lg" />
           </div>
           <h1 className="text-3xl font-bold text-gray-900 mb-2">{t('auth.login.welcome')}</h1>
           <p className="text-gray-600">{t('auth.login.subtitle')}</p>

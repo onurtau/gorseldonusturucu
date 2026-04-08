@@ -30,7 +30,7 @@ const Footer = () => {
           {/* Logo & Description */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-1 mb-4">
-              <img src="/logo.svg" alt="Görsel Dönüştürücü" className="w-20 h-20" />
+              <img src={process.env.PUBLIC_URL + '/logo.svg'} alt="Görsel Dönüştürücü" className="w-20 h-20" />
               <h3 className="text-xl font-bold gradient-text">{t('header.title')}</h3>
             </div>
             <p className="text-gray-600 text-sm mb-4 max-w-md">

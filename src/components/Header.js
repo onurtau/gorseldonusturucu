@@ -38,7 +38,7 @@ const Header = React.memo(() => {
               onClick={() => setActiveView('home')}
               className="flex items-center space-x-2.5 hover:opacity-80 transition-opacity"
             >
-              <img src="/logo.svg" alt="Görsel Dönüştürücü" className="w-[60px] h-[60px]" />
+              <img src={process.env.PUBLIC_URL + '/logo.svg'} alt="Görsel Dönüştürücü" className="w-[60px] h-[60px]" />
               <div>
                 <h1 className="text-lg font-bold gradient-text flex items-center gap-1.5">
                   {t('header.title')}
