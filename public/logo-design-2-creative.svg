@@ -1,0 +1,36 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- TASARIM 2: YARATICI ENERJİ - Minimal Lightning Bolt (Mor-Turuncu) -->
+  
+  <defs>
+    <linearGradient id="purpleOrange" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#A855F7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F97316;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="energyGlow">
+      <stop offset="0%" style="stop-color:#FBBF24;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Glow Arka Plan -->
+  <circle cx="256" cy="256" r="160" fill="url(#energyGlow)"/>
+  
+  <!-- Şimşek Yıldırımı (Lightning Bolt) - Transform Gücü -->
+  <g transform="translate(256, 150)">
+    <polygon points="0,0 -40,120 0,100 40,220 0,140 -20,220" 
+             fill="url(#purpleOrange)" stroke="none"/>
+    
+    <!-- İç Parlak Çizgi -->
+    <path d="M -5 10 L -25 110 L -8 100 L 15 200" 
+          stroke="#FEF3C7" stroke-width="3" fill="none" opacity="0.8"/>
+  </g>
+  
+  <!-- Enerji Parıltıları -->
+  <circle cx="220" cy="190" r="8" fill="#F97316" opacity="0.7"/>
+  <circle cx="290" cy="240" r="6" fill="#A855F7" opacity="0.6"/>
+  <circle cx="240" cy="340" r="7" fill="#FB923C" opacity="0.65"/>
+  
+  <!-- Alt Şerit -->
+  <rect x="180" y="420" width="152" height="8" rx="4" fill="url(#purpleOrange)" opacity="0.6"/>
+</svg>

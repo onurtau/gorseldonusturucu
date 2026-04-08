@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG to PNG Converter - Logo Dönüştürücü</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        .preview-section {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        #svgPreview {
+            max-width: 200px;
+            max-height: 200px;
+            margin: 20px auto;
+            display: block;
+        }
+        .size-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .size-btn {
+            background: linear-gradient(135deg, #0EA5E9, #06B6D4);
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(14, 165, 233, 0.3);
+        }
+        .size-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(14, 165, 233, 0.4);
+        }
+        .size-btn:active {
+            transform: translateY(0);
+        }
+        .info-box {
+            background: #e3f2fd;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .success-box {
+            background: #e8f5e9;
+            border-left: 4px solid #4CAF50;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            display: none;
+        }
+        canvas {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 SVG → PNG Converter</h1>
+        <p class="subtitle">logo.svg dosyasını tüm boyutlarda PNG olarak indir</p>
+        
+        <div class="preview-section">
+            <h3>📸 Önizleme</h3>
+            <img id="svgPreview" src="/logo.svg" alt="Logo Preview">
+        </div>
+        
+        <div class="info-box">
+            <strong>ℹ️ Kullanım:</strong> İstediğiniz boyuta tıklayın, PNG otomatik indirilir. 
+            Her PNG dosyası <code>public/</code> klasörüne manuel kopyalanmalı.
+        </div>
+        
+        <h3 style="margin-top: 30px;">📏 PNG Boyutları:</h3>
+        <div class="size-grid">
+            <button class="size-btn" onclick="convertSVGtoPNG(16)">16×16px<br><small>Favicon</small></button>
+            <button class="size-btn" onclick="convertSVGtoPNG(32)">32×32px<br><small>Favicon</small></button>
+            <button class="size-btn" onclick="convertSVGtoPNG(50)">50×50px<br><small>Small Icon</small></button>
+            <button class="size-btn" onclick="convertSVGtoPNG(64)">64×64px<br><small>Icon</small></button>
+            <button class="size-btn" onclick="convertSVGtoPNG(128)">128×128px<br><small>Standard</small></button>
+            <button class="size-btn" onclick="convertSVGtoPNG(150)">150×150px<br><small>Windows</small></button>
+            <button class="size-btn" onclick="convertSVGtoPNG(192)">192×192px<br><small>PWA</small></button>
+            <button class="size-btn" onclick="convertSVGtoPNG(256)">256×256px<br><small>Desktop</small></button>
+            <button class="size-btn" onclick="convertSVGtoPNG(300)">300×300px<br><small>Large</small></button>
+            <button class="size-btn" onclick="convertSVGtoPNG(310)">310×310px<br><small>MS Tile</small></button>
+            <button class="size-btn" onclick="convertSVGtoPNG(512)">512×512px<br><small>High-Res</small></button>
+            <button class="size-btn" onclick="convertSVGtoPNG(1024)">1024×1024px<br><small>Max</small></button>
+        </div>
+        
+        <div class="success-box" id="successMsg">
+            ✅ <strong id="successText"></strong> başarıyla oluşturuldu ve indirildi!
+        </div>
+        
+        <div class="info-box" style="margin-top: 30px;">
+            <strong>🔧 Desktop Uygulaması İçin:</strong><br>
+            • 256×256px PNG'yi <code>assets/icon.png</code> olarak kaydet<br>
+            • Electron build için 512×512px kullanılır<br>
+            • Uygulamayı yeniden başlat
+        </div>
+    </div>
+    
+    <canvas id="canvas"></canvas>
+    
+    <script>
+        async function convertSVGtoPNG(size) {
+            try {
+                // SVG yükle
+                const response = await fetch('/logo.svg');
+                const svgText = await response.text();
+                
+                // Canvas oluştur
+                const canvas = document.getElementById('canvas');
+                const ctx = canvas.getContext('2d');
+                canvas.width = size;
+                canvas.height = size;
+                
+                // SVG'yi Image'e çevir
+                const img = new Image();
+                const svgBlob = new Blob([svgText], { type: 'image/svg+xml;charset=utf-8' });
+                const url = URL.createObjectURL(svgBlob);
+                
+                img.onload = function() {
+                    // Beyaz arka plan
+                    ctx.fillStyle = 'white';
+                    ctx.fillRect(0, 0, size, size);
+                    
+                    // SVG'yi canvas'a çiz
+                    ctx.drawImage(img, 0, 0, size, size);
+                    
+                    // PNG olarak indir
+                    canvas.toBlob(function(blob) {
+                        const a = document.createElement('a');
+                        a.href = URL.createObjectURL(blob);
+                        a.download = `logo-${size}.png`;
+                        a.click();
+                        
+                        // Başarı mesajı
+                        const successMsg = document.getElementById('successMsg');
+                        const successText = document.getElementById('successText');
+                        successText.textContent = `logo-${size}.png`;
+                        successMsg.style.display = 'block';
+                        setTimeout(() => {
+                            successMsg.style.display = 'none';
+                        }, 3000);
+                        
+                        URL.revokeObjectURL(url);
+                    }, 'image/png');
+                };
+                
+                img.src = url;
+                
+            } catch (error) {
+                alert('Hata: ' + error.message);
+            }
+        }
+        
+        // Sayfa yüklendiğinde logo önizlemesi
+        window.addEventListener('load', () => {
+            console.log('✅ SVG to PNG Converter hazır!');
+        });
+    </script>
+</body>
+</html>

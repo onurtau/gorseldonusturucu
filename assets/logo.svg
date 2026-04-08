@@ -1,0 +1,60 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="256" cy="256" r="240" fill="url(#gradient1)" opacity="0.1"/>
+  
+  <!-- Gradient Definitions -->
+  <defs>
+    <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2563EB;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#60A5FA;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Left Image Frame (Input) -->
+  <g transform="translate(100, 140)">
+    <!-- Frame Border -->
+    <rect x="0" y="0" width="140" height="160" rx="16" fill="none" stroke="url(#gradient1)" stroke-width="8"/>
+    <!-- Mountain Icon (Image Symbol) -->
+    <path d="M 20 120 L 50 80 L 80 110 L 120 60 L 120 130 L 20 130 Z" fill="url(#gradient2)" opacity="0.6"/>
+    <!-- Sun/Circle -->
+    <circle cx="100" cy="35" r="12" fill="#60A5FA" opacity="0.8"/>
+  </g>
+  
+  <!-- Transform Arrow (Center) -->
+  <g transform="translate(256, 220)">
+    <!-- Arrow Body -->
+    <rect x="-30" y="-6" width="60" height="12" rx="6" fill="url(#gradient1)"/>
+    <!-- Arrow Head -->
+    <path d="M 30 0 L 50 -15 L 50 15 Z" fill="url(#gradient1)"/>
+    <!-- Sparkle Effect -->
+    <circle cx="0" cy="-25" r="4" fill="#60A5FA" opacity="0.8"/>
+    <circle cx="10" cy="25" r="3" fill="#3B82F6" opacity="0.6"/>
+    <circle cx="-15" cy="-20" r="3" fill="#93C5FD" opacity="0.7"/>
+  </g>
+  
+  <!-- Right Image Frame (Output) -->
+  <g transform="translate(272, 140)">
+    <!-- Frame Border with Glow Effect -->
+    <rect x="0" y="0" width="140" height="160" rx="16" fill="none" stroke="url(#gradient2)" stroke-width="8"/>
+    <!-- Enhanced Mountain Icon -->
+    <path d="M 20 120 L 50 80 L 80 110 L 120 60 L 120 130 L 20 130 Z" fill="url(#gradient1)" opacity="0.8"/>
+    <!-- Brighter Sun -->
+    <circle cx="100" cy="35" r="12" fill="#3B82F6"/>
+    <!-- Quality Badge -->
+    <circle cx="25" cy="35" r="8" fill="#10B981" opacity="0.9"/>
+  </g>
+  
+  <!-- Bottom Accent Elements -->
+  <g opacity="0.3">
+    <circle cx="140" cy="380" r="6" fill="#3B82F6"/>
+    <circle cx="256" cy="400" r="8" fill="#60A5FA"/>
+    <circle cx="372" cy="380" r="6" fill="#3B82F6"/>
+  </g>
+  
+  <!-- Optional: Text Space Indicator (can be replaced with actual app name later) -->
+  <rect x="156" y="340" width="200" height="40" rx="20" fill="url(#gradient1)" opacity="0.15"/>
+</svg>

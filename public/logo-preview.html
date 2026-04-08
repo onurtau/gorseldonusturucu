@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logo Preview - Image Converter</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+            color: #E2E8F0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            width: 100%;
+        }
+        
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #94A3B8;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+        
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .logo-card {
+            background: rgba(30, 41, 59, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .logo-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(59, 130, 246, 0.5);
+            box-shadow: 0 10px 40px rgba(59, 130, 246, 0.2);
+        }
+        
+        .logo-card h3 {
+            color: #60A5FA;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .logo-card p {
+            color: #94A3B8;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .logo-display {
+            background: rgba(15, 23, 42, 0.5);
+            border-radius: 12px;
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 200px;
+            margin-bottom: 1rem;
+        }
+        
+        .logo-display img {
+            max-width: 100%;
+            height: auto;
+            filter: drop-shadow(0 4px 20px rgba(59, 130, 246, 0.3));
+        }
+        
+        .size-badge {
+            display: inline-block;
+            background: rgba(59, 130, 246, 0.2);
+            color: #60A5FA;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        .main-logo {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(96, 165, 250, 0.1) 100%);
+        }
+        
+        .main-logo .logo-display {
+            min-height: 400px;
+        }
+        
+        .features {
+            grid-column: 1 / -1;
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 16px;
+            padding: 2rem;
+        }
+        
+        .features h3 {
+            color: #10B981;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .features ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        
+        .features li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            background: rgba(15, 23, 42, 0.3);
+            border-radius: 8px;
+        }
+        
+        .features li::before {
+            content: "✓";
+            color: #10B981;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .color-palette {
+            grid-column: 1 / -1;
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            border-radius: 16px;
+            padding: 2rem;
+        }
+        
+        .color-palette h3 {
+            color: #8B5CF6;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .colors {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .color-item {
+            text-align: center;
+        }
+        
+        .color-box {
+            width: 100px;
+            height: 100px;
+            border-radius: 12px;
+            margin-bottom: 0.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        
+        .color-name {
+            font-size: 0.9rem;
+            color: #CBD5E1;
+            margin-bottom: 0.25rem;
+        }
+        
+        .color-code {
+            font-size: 0.75rem;
+            color: #64748B;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 Logo Tasarımı</h1>
+        <p class="subtitle">Modern, Profesyonel Görsel Dönüştürme Logosu</p>
+        
+        <div class="logo-grid">
+            <!-- Ana Logo -->
+            <div class="logo-card main-logo">
+                <h3>📱 Ana Logo (512x512)</h3>
+                <p>Yüksek çözünürlüklü ana logo - uygulama ikonu için ideal</p>
+                <div class="logo-display">
+                    <img src="logo-512.png" alt="Ana Logo" style="max-width: 400px;">
+                </div>
+                <span class="size-badge">512 × 512 px</span>
+            </div>
+            
+            <!-- Özellikler -->
+            <div class="features">
+                <h3>✨ Logo Özellikleri</h3>
+                <ul>
+                    <li>Modern ve minimal tasarım</li>
+                    <li>Mavi gradient renk paleti (#3B82F6 → #2563EB)</li>
+                    <li>Görsel dönüşümü simgeleyen iki frame</li>
+                    <li>Transform ok animasyonu</li>
+                    <li>Parıltı efektleri</li>
+                    <li>Kalite rozeti (yeşil)</li>
+                    <li>SVG vektörel kaynak</li>
+                    <li>Şeffaf arka plan</li>
+                </ul>
+            </div>
+            
+            <!-- Boyut Varyantları -->
+            <div class="logo-card">
+                <h3>📐 192x192</h3>
+                <p>PWA ve mobil cihazlar için</p>
+                <div class="logo-display">
+                    <img src="logo-192.png" alt="Logo 192">
+                </div>
+                <span class="size-badge">192 × 192 px</span>
+            </div>
+            
+            <div class="logo-card">
+                <h3>💠 64x64</h3>
+                <p>Küçük boyut gösterimleri</p>
+                <div class="logo-display">
+                    <img src="logo-64.png" alt="Logo 64">
+                </div>
+                <span class="size-badge">64 × 64 px</span>
+            </div>
+            
+            <div class="logo-card">
+                <h3>⭐ Favicon</h3>
+                <p>Tarayıcı sekmesi ikonu</p>
+                <div class="logo-display">
+                    <img src="favicon.ico" alt="Favicon" style="width: 32px; height: 32px;">
+                </div>
+                <span class="size-badge">32 × 32 px (ICO)</span>
+            </div>
+            
+            <div class="logo-card">
+                <h3>🎨 SVG Kaynak</h3>
+                <p>Vektörel orijinal dosya</p>
+                <div class="logo-display">
+                    <img src="logo.svg" alt="Logo SVG" style="max-width: 150px;">
+                </div>
+                <span class="size-badge">Sınırsız Ölçek</span>
+            </div>
+            
+            <!-- Renk Paleti -->
+            <div class="color-palette">
+                <h3>🎨 Renk Paleti</h3>
+                <div class="colors">
+                    <div class="color-item">
+                        <div class="color-box" style="background: #3B82F6;"></div>
+                        <div class="color-name">Primary Blue</div>
+                        <div class="color-code">#3B82F6</div>
+                    </div>
+                    <div class="color-item">
+                        <div class="color-box" style="background: #2563EB;"></div>
+                        <div class="color-name">Dark Blue</div>
+                        <div class="color-code">#2563EB</div>
+                    </div>
+                    <div class="color-item">
+                        <div class="color-box" style="background: #60A5FA;"></div>
+                        <div class="color-name">Light Blue</div>
+                        <div class="color-code">#60A5FA</div>
+                    </div>
+                    <div class="color-item">
+                        <div class="color-box" style="background: #93C5FD;"></div>
+                        <div class="color-name">Sky Blue</div>
+                        <div class="color-code">#93C5FD</div>
+                    </div>
+                    <div class="color-item">
+                        <div class="color-box" style="background: #10B981;"></div>
+                        <div class="color-name">Success Green</div>
+                        <div class="color-code">#10B981</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

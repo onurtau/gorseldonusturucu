@@ -1,0 +1,11 @@
+﻿{
+    "settings":  {
+                     "github.copilot.chat.history.enabled":  true,
+                     "github.copilot.chat.experimental.persistentChatHistory":  true
+                 },
+    "folders":  [
+                    {
+                        "path":  "."
+                    }
+                ]
+}

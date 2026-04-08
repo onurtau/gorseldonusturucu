@@ -1,0 +1,91 @@
+GÖRSEL DÖNÜŞTÜRÜCÜ - YAZILIM LİSANS SÖZLEŞMESİ
+
+Son Güncelleme: 26 Şubat 2026
+
+Bu Lisans Sözleşmesi ("Sözleşme"), Görsel Dönüştürücü yazılımını ("Yazılım") kullanımınızı düzenler.
+
+1. LİSANS VERİLMESİ
+
+1.1 Ücretsiz Sürüm
+Yazılımın ücretsiz sürümü, kişisel ve ticari olmayan kullanım için sınırlı özelliklerle kullanılabilir.
+- Maksimum 5 dönüştürme hakkı
+- Temel özellikler
+
+1.2 Premium Lisans
+Premium lisans satın alındığında:
+- Sınırsız dönüştürme hakkı
+- Tüm gelişmiş özellikler
+- Öncelikli teknik destek
+- Düzenli güncellemeler
+
+2. KULLANIM KISITLAMALARI
+
+Şunları YAPAMAZSINIZ:
+- Yazılımı ters mühendislik, kaynak kodunu çıkarma veya parçalara ayırma
+- Yazılımı kopyalama, dağıtma veya satma
+- Lisans sistemini devre dışı bırakma veya atlatma
+- Yazılımı yasadışı amaçlar için kullanma
+- Telif hakkı bilgilerini kaldırma
+
+3. GARANTİ REDDİ
+
+YAZILIM "OLDUĞU GİBİ" SAĞLANIR. HİÇBİR GARANTİ VERİLMEZ.
+
+Yazılım geliştiricisi, yazılımın kullanımından kaynaklanan:
+- Veri kaybı
+- İş kaybı
+- Donanım hasarı
+- Diğer zararlardan sorumlu değildir.
+
+4. GİZLİLİK
+
+- Dosyalarınız yerel olarak işlenir
+- Hiçbir veri sunucularımıza yüklenmez
+- Ödeme bilgileri güvenli şekilde işlenir
+- Kullanım istatistikleri anonim olarak toplanabilir
+
+5. ÖDEME VE İPTAL
+
+5.1 Abonelik
+- Aylık ve yıllık abonelik seçenekleri mevcuttur
+- Abonelikler otomatik olarak yenilenir
+- İstediğiniz zaman iptal edebilirsiniz
+
+5.2 İade Politikası
+- İlk 14 gün içinde koşulsuz iade hakkı
+- İade talepleri: destek@gorseldonusturucu.com
+
+6. GÜNCELLEMELER
+
+- Küçük güncellemeler otomatik ve ücretsizdir
+- Büyük sürüm güncellemeleri ek ücret gerektirebilir
+- Güncelleme bildirimleri alırsınız
+
+7. FESİH
+
+Lisans şu durumlarda feshedilenebilir:
+- Sözleşme şartlarını ihlal ederseniz
+- Ödeme yapılmazsa (Premium için)
+- Kötüye kullanım tespit edilirse
+
+8. TELİF HAKKI
+
+Copyright © 2026 Görsel Dönüştürücü. Tüm hakları saklıdır.
+
+9. İLETİŞİM
+
+Teknik Destek: destek@gorseldonusturucu.com
+Satış: satis@gorseldonusturucu.com
+Web: www.gorseldonusturucu.com
+
+10. KABUL
+
+Bu yazılımı yükleyerek veya kullanarak, bu Lisans Sözleşmesinin tüm şartlarını kabul etmiş olursunuz.
+
+---
+
+SON KULLANICI LİSANS SÖZLEŞMESİ (EULA)
+
+Tüm detaylar için: www.gorseldonusturucu.com/lisans
+
+Bu sözleşme Türkiye Cumhuriyeti yasalarına tabidir.

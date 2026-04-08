@@ -1,0 +1,48 @@
+appId: com.gorseldonusturucu.app
+productName: Görsel Dönüştürücü
+copyright: Copyright © 2026 Görsel Dönüştürücü
+
+# Ana dosya konumu
+extraMetadata:
+  main: electron/main.js
+
+# Dizinler
+directories:
+  output: release
+  buildResources: assets
+
+# Hangi dosyalar paketlenecek
+files:
+  - build/**/*
+  - electron/**/*
+  - node_modules/**/*
+  - package.json
+  - "!**/*.map"
+  - "!**/node_modules/*/{CHANGELOG.md,README.md,README,readme.md,readme}"
+  - "!**/node_modules/.bin"
+  - "!**/{.DS_Store,.git,.hg,.svn,CVS,RCS,SCCS,__pycache__,thumbs.db,.gitignore,.gitattributes}"
+
+# Sıkıştırma
+compression: normal
+
+# Windows build ayarları
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+  artifactName: "GorselDonusturucu-Setup-${version}.${ext}"
+  publisherName: "Görsel Dönüştürücü"
+  verifyUpdateCodeSignature: false
+  sign: null  # Kod imzalamayı devre dışı bırak
+
+# NSIS (Windows installer) ayarları
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: always
+  createStartMenuShortcut: true
+  shortcutName: "Görsel Dönüştürücü"
+  deleteAppDataOnUninstall: false
+  runAfterFinish: true
+  differentialPackage: false  # Güncelleme paketi oluşturma

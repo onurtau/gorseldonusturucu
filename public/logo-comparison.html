@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logo Tasarım Karşılaştırma</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: rgba(255,255,255,0.9);
+            font-size: 1.1rem;
+            margin-bottom: 50px;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .logo-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .logo-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .logo-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .logo-meta {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .logo-display {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 300px;
+            margin-bottom: 15px;
+        }
+        
+        .logo-display img {
+            max-width: 100%;
+            height: auto;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin: 3px;
+        }
+        
+        .badge-prestige {
+            background: linear-gradient(135deg, #1E3A8A, #F59E0B);
+            color: white;
+        }
+        
+        .badge-creative {
+            background: linear-gradient(135deg, #8B5CF6, #F97316);
+            color: white;
+        }
+        
+        .badge-tech {
+            background: linear-gradient(135deg, #0EA5E9, #22D3EE);
+            color: white;
+        }
+        
+        .badge-original {
+            background: linear-gradient(135deg, #3B82F6, #2563EB);
+            color: white;
+        }
+        
+        .info-box {
+            background: rgba(255,255,255,0.95);
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .info-box h3 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .info-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .info-box li {
+            padding: 8px 0;
+            color: #555;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .info-box li:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 Logo Tasarım Karşılaştırma</h1>
+        <p class="subtitle">Basit, temiz, anlaşılır - Minimal tasarım, maksimum etki</p>
+        
+        <div class="grid">
+            <!-- Orijinal Logo -->
+            <div class="logo-card">
+                <div class="logo-title">
+                    Orijinal Logo
+                    <span class="badge badge-original">Mevcut</span>
+                </div>
+                <div class="logo-meta">
+                    <strong>Renk:</strong> Mavi Gradient<br>
+                    <strong>Stil:</strong> Dönüşüm ok metaforu<br>
+                    <strong>Dosya:</strong> logo-original.svg
+                </div>
+                <div class="logo-display">
+                    <img src="/logo-original.svg" alt="Orijinal Logo">
+                </div>
+            </div>
+            
+            <!-- Tasarım 1 -->
+            <div class="logo-card">
+                <div class="logo-title">
+                    Tasarım 1: Prestij
+                    <span class="badge badge-prestige">Lacivert-Altın</span>
+                </div>
+                <div class="logo-meta">
+                    <strong>Sembol:</strong> Altın Taç (Crown)<br>
+                    <strong>Mesaj:</strong> Premium kalite, kraliyet lüksü, güvenilir otorite<br>
+                    <strong>Hedef:</strong> Kurumsal müşteri, B2B, ciddi profesyonellik<br>
+                    <strong>Tasarım:</strong> Minimal geometri, net şekiller, bold renkler<br>
+                    <strong>Dosya:</strong> logo-design-1-prestige.svg
+                </div>
+                <div class="logo-display">
+                    <img src="/logo-design-1-prestige.svg" alt="Prestij Logo">
+                </div>
+            </div>
+            
+            <!-- Tasarım 2 -->
+            <div class="logo-card">
+                <div class="logo-title">
+                    Tasarım 2: Yaratıcı Enerji
+                    <span class="badge badge-creative">Mor-Turuncu</span>
+                </div>
+                <div class="logo-meta">
+                    <strong>Sembol:</strong> Şimşek Yıldırımı (Lightning Bolt)<br>
+                    <strong>Mesaj:</strong> Hız, güç, ani dönüşüm, viral enerji<br>
+                    <strong>Hedef:</strong> Sosyal medya, Z kuşağı, hızlı aksiyon<br>
+                    <strong>Tasarım:</strong> Dinamik form, gradient ışık, enerji patlaması<br>
+                    <strong>Dosya:</strong> logo-design-2-creative.svg
+                </div>
+                <div class="logo-display">
+                    <img src="/logo-design-2-creative.svg" alt="Yaratıcı Enerji Logo">
+                </div>
+            </div>
+            
+            <!-- Tasarım 3 -->
+            <div class="logo-card">
+                <div class="logo-title">
+                    Tasarım 3: Teknoloji
+                    <span class="badge badge-tech">Mavi-Cyan</span>
+                </div>
+                <div class="logo-meta">
+                    <strong>Sembol:</strong> Hexagon + Transform Oklar<br>
+                    <strong>Mesaj:</strong> Teknik mükemmellik, dijital dönüşüm, modern<br>
+                    <strong>Hedef:</strong> SaaS, developer tools, tech startup<br>
+                    <strong>Tasarım:</strong> Geometric precision, katmanlı derinlik, cyber vibe<br>
+                    <strong>Dosya:</strong> logo-design-3-tech.svg
+                </div>
+                <div class="logo-display">
+                    <img src="/logo-design-3-tech.svg" alt="Teknoloji Logo">
+                </div>
+            </div>
+        </div>
+        
+        <div class="info-box">
+            <h3>📋 Tasarım Felsefesi - Minimal & Güçlü</h3>
+            <ul>
+                <li><strong>Basitlik:</strong> Her logo tek güçlü sembol → Anında tanınma</li>
+                <li><strong>Taç (Crown):</strong> Premium kalite, güven, otorite sembolü</li>
+                <li><strong>Yıldırım (Lightning):</strong> Hız, enerji, ani dönüşüm gücü</li>
+                <li><strong>Hexagon:</strong> Teknik mükemmellik, modern teknoloji</li>
+                <li><strong>Renk Psikolojisi:</strong> Lacivert-Altın = lüks | Mor-Turuncu = yaratıcılık | Mavi-Cyan = teknoloji</li>
+                <li><strong>Ölçeklenebilir:</strong> 16px favicon'den billboard'a kadar net</li>
+                <li><strong>Dosya Ayrımı:</strong> Her tasarım bağımsız SVG dosyası, hiçbiri karışmıyor</li>
+            </ul>
+        </div>
+        
+        <div class="info-box" style="margin-top: 20px;">
+            <h3>🎯 Hangi Logo Hangi Markaya Uygun?</h3>
+            <ul>
+                <li><strong>Prestij (1):</strong> Kurumsal müşteri ağırlıklı, B2B, ciddi profesyonellik gereken işler</li>
+                <li><strong>Yaratıcı Enerji (2):</strong> Viral marketing hedefli, sosyal medya ağırlıklı, Z kuşağı hedef kitle</li>
+                <li><strong>Teknoloji (3):</strong> SaaS, developer araçları, teknik müşteri kitlesi, LinkedIn pazarlama</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
