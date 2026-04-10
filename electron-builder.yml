@@ -11,6 +11,11 @@ directories:
   output: release
   buildResources: assets
 
+# ASAR dışına çıkarılacak dosyalar (logo için)
+extraResources:
+  - from: "public/logo-192.png"
+    to: "logo-192.png"
+
 # Hangi dosyalar paketlenecek
 files:
   - build/**/*

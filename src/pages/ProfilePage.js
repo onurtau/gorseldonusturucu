@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -107,21 +107,8 @@ const ProfilePage = () => {
     resolver: zodResolver(passwordSchema)
   });
 
-  // 2FA durumunu yükle
-  useEffect(() => {
-    if (user) {
-      load2FAFactors();
-    }
-  }, [user, load2FAFactors]);
-
-  // Session'ları yükle
-  useEffect(() => {
-    if (user && activeTab === 'sessions') {
-      loadSessions();
-    }
-  }, [user, activeTab, loadSessions]);
-
-  const loadSessions = async () => {
+  // Session'ları yükle (useCallback ile tanımla)
+  const loadSessions = useCallback(async () => {
     console.log('🔄 Loading sessions...');
     setLoadingSessions(true);
     try {
@@ -140,7 +127,21 @@ const ProfilePage = () => {
       console.log('✅ Loading sessions completed');
       setLoadingSessions(false);
     }
-  };
+  }, [addNotification, t]);
+
+  // 2FA durumunu yükle
+  useEffect(() => {
+    if (user) {
+      load2FAFactors();
+    }
+  }, [user, load2FAFactors]);
+
+  // Session'ları yükle
+  useEffect(() => {
+    if (user && activeTab === 'sessions') {
+      loadSessions();
+    }
+  }, [user, activeTab, loadSessions]);
 
   useEffect(() => {
     setIs2FAEnabled(mfaFactors && mfaFactors.length > 0);

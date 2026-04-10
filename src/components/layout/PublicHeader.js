@@ -3,7 +3,6 @@ import { ImageIcon, Sparkles, Globe, ArrowLeft, Download } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import useAuthStore from '../../store/useAuthStore';
 import * as trialManager from '../../services/trialManager';
-import { logoBase64 } from '../../assets/logoBase64';
 
 const PublicHeader = ({ onLoginClick, onRegisterClick, onBackToLanding }) => {
   const { t, language, changeLanguage } = useLanguage();
@@ -11,6 +10,9 @@ const PublicHeader = ({ onLoginClick, onRegisterClick, onBackToLanding }) => {
   
   // Trial bilgisini al (sadece kayıtsız kullanıcılar için)
   const remainingTrials = !user ? trialManager.getRemainingTrials(user) : null;
+
+  // Logo path (Electron veya Web)
+  const logoSrc = window.electronAPI?.logo || `${process.env.PUBLIC_URL}/logo-192.png`;
 
   // Desktop download handler
   const handleDownloadDesktop = () => {
@@ -38,7 +40,11 @@ const PublicHeader = ({ onLoginClick, onRegisterClick, onBackToLanding }) => {
             )}
             
             <div className="flex items-center space-x-1.5">
-              <img src={logoBase64} alt="Görsel Dönüştürücü" className="w-[60px] h-[60px]" />
+              <img 
+                src={logoSrc} 
+                alt="Logo" 
+                className="w-8 h-8 sm:w-11 sm:h-11"
+              />
               <div>
                 <h1 className="text-lg font-bold gradient-text flex items-center gap-1.5">
                   {t('header.title')}

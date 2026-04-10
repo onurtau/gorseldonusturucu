@@ -5,7 +5,6 @@ import { z } from 'zod';
 import { User, Mail, Lock, Eye, EyeOff, UserPlus, Loader2, AlertCircle, CheckCircle2, Globe, ArrowLeft } from 'lucide-react';
 import useAuthStore from '../store/useAuthStore';
 import { useLanguage } from '../contexts/LanguageContext';
-import { logoBase64 } from '../assets/logoBase64';
 
 const RegisterPage = ({ onSwitchToLogin, onBackToLanding }) => {
   const { t, language, changeLanguage } = useLanguage();
@@ -14,6 +13,9 @@ const RegisterPage = ({ onSwitchToLogin, onBackToLanding }) => {
   const [registrationSuccess, setRegistrationSuccess] = useState(false);
   
   const { signUpWithEmail, signInWithGoogle, signInWithMicrosoft, isLoading, error, clearError } = useAuthStore();
+
+  // Logo path (Electron veya Web)
+  const logoSrc = window.electronAPI?.logo || `${process.env.PUBLIC_URL}/logo-192.png`;
 
   // Validation schema
   const registerSchema = z.object({
@@ -193,7 +195,7 @@ const RegisterPage = ({ onSwitchToLogin, onBackToLanding }) => {
         {/* Logo/Header */}
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center w-44 h-44 mb-6">
-            <img src={logoBase64} alt="Görsel Dönüştürücü" className="w-full h-full drop-shadow-lg" />
+            <img src={logoSrc} alt="Görsel Dönüştürücü" className="w-full h-full drop-shadow-lg" />
           </div>
           <h1 className="text-3xl font-bold text-gray-900 mb-2">{t('auth.register.createAccount')}</h1>
           <p className="text-gray-600">{t('auth.register.subtitle')}</p>

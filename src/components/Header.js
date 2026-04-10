@@ -3,7 +3,6 @@ import { ImageIcon, Sparkles, Settings, Crown, Home, User, LogOut, ChevronDown }
 import useAppStore from '../store/useAppStore';
 import useAuthStore from '../store/useAuthStore';
 import { useLanguage } from '../contexts/LanguageContext';
-import { logoBase64 } from '../assets/logoBase64';
 
 const Header = React.memo(() => {
   const { license, toggleLicenseModal, toggleSettingsModal, ui, setActiveView } = useAppStore();
@@ -11,6 +10,9 @@ const Header = React.memo(() => {
   const { t } = useLanguage();
   const [showProfileMenu, setShowProfileMenu] = useState(false);
   const profileMenuRef = useRef(null);
+
+  // Logo path (Electron veya Web)
+  const logoSrc = window.electronAPI?.logo || `${process.env.PUBLIC_URL}/logo-192.png`;
 
   // Profil menüsü dışına tıklandığında kapat
   useEffect(() => {
@@ -39,7 +41,11 @@ const Header = React.memo(() => {
               onClick={() => setActiveView('home')}
               className="flex items-center space-x-2.5 hover:opacity-80 transition-opacity"
             >
-              <img src={logoBase64} alt="Görsel Dönüştürücü" className="w-[60px] h-[60px]" />
+              <img 
+                src={logoSrc} 
+                alt="Logo" 
+                className="w-8 h-8 sm:w-11 sm:h-11"
+              />
               <div>
                 <h1 className="text-lg font-bold gradient-text flex items-center gap-1.5">
                   {t('header.title')}

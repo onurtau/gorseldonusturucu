@@ -5,12 +5,15 @@ import { z } from 'zod';
 import { Mail, Lock, Eye, EyeOff, LogIn, Loader2, AlertCircle, Globe, ArrowLeft } from 'lucide-react';
 import useAuthStore from '../store/useAuthStore';
 import { useLanguage } from '../contexts/LanguageContext';
-import { logoBase64 } from '../assets/logoBase64';
 
 const LoginPage = ({ onSwitchToRegister, onForgotPassword, onBackToLanding }) => {
   const [showPassword, setShowPassword] = useState(false);
+  const [rememberMe, setRememberMe] = useState(false);
   const { signInWithEmail, signInWithGoogle, signInWithMicrosoft, isLoading, error, clearError } = useAuthStore();
   const { t, language, changeLanguage } = useLanguage();
+
+  // Logo path (Electron veya Web)
+  const logoSrc = window.electronAPI?.logo || `${process.env.PUBLIC_URL}/logo-192.png`;
 
   // Validation schema
   const loginSchema = z.object({
@@ -27,12 +30,21 @@ const LoginPage = ({ onSwitchToRegister, onForgotPassword, onBackToLanding }) =>
     resolver: zodResolver(loginSchema)
   });
 
-  // Component mount olduğunda formu temizle
+  // Component mount olduğunda localStorage'dan email'i yükle
   useEffect(() => {
-    reset({
-      email: '',
-      password: ''
-    });
+    const savedEmail = localStorage.getItem('rememberedEmail');
+    if (savedEmail) {
+      reset({
+        email: savedEmail,
+        password: ''
+      });
+      setRememberMe(true);
+    } else {
+      reset({
+        email: '',
+        password: ''
+      });
+    }
   }, [reset]);
 
   // Error temizle
@@ -44,6 +56,12 @@ const LoginPage = ({ onSwitchToRegister, onForgotPassword, onBackToLanding }) =>
     const result = await signInWithEmail(data.email, data.password);
     
     if (result.success) {
+      // Beni hatırla işaretliyse email'i kaydet, değilse sil
+      if (rememberMe) {
+        localStorage.setItem('rememberedEmail', data.email);
+      } else {
+        localStorage.removeItem('rememberedEmail');
+      }
       // Auth store otomatik yönlendirecek
     }
   };
@@ -87,7 +105,7 @@ const LoginPage = ({ onSwitchToRegister, onForgotPassword, onBackToLanding }) =>
         {/* Logo/Header */}
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center w-44 h-44 mb-6">
-            <img src={logoBase64} alt="Görsel Dönüştürücü" className="w-full h-full drop-shadow-lg" />
+            <img src={logoSrc} alt="Görsel Dönüştürücü" className="w-full h-full drop-shadow-lg" />
           </div>
           <h1 className="text-3xl font-bold text-gray-900 mb-2">{t('auth.login.welcome')}</h1>
           <p className="text-gray-600">{t('auth.login.subtitle')}</p>
@@ -172,8 +190,22 @@ const LoginPage = ({ onSwitchToRegister, onForgotPassword, onBackToLanding }) =>
               )}
             </div>
 
-            {/* Forgot Password */}
-            <div className="flex justify-end">
+            {/* Forgot Password & Remember Me */}
+            <div className="flex items-center justify-between">
+              {/* Remember Me Checkbox */}
+              <label className="flex items-center gap-2 cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={rememberMe}
+                  onChange={(e) => setRememberMe(e.target.checked)}
+                  className="w-4 h-4 text-primary-500 bg-gray-50 border-gray-300 rounded focus:ring-primary-500 focus:ring-2 cursor-pointer"
+                />
+                <span className="text-sm text-gray-700 select-none">
+                  {t('auth.login.rememberMe')}
+                </span>
+              </label>
+
+              {/* Forgot Password */}
               <button
                 type="button"
                 onClick={onForgotPassword}
