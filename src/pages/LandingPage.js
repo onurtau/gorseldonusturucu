@@ -18,13 +18,15 @@ import WatermarkPage from './WatermarkPage';
 import MultiPage from './MultiPage';
 import PaymentSuccessPage from './PaymentSuccessPage';
 import PaymentCancelPage from './PaymentCancelPage';
+import TermsPage from './TermsPage';
+import PrivacyPage from './PrivacyPage';
 
 const LandingPage = () => {
   // Hash'den başlangıç view'ını al
   const getInitialView = () => {
     const hash = window.location.hash.slice(1);
     const validViews = [
-      'login', 'register', 'forgot-password',
+      'login', 'register', 'forgot-password', 'terms', 'privacy',
       'format-conversion', 'resize', 'colorspace', 'watermark', 'all-in-one',
       'payment/success', 'payment/cancel'
     ];
@@ -131,6 +133,14 @@ const LandingPage = () => {
         onBackToLanding={() => navigateTo('landing')}
       />
     );
+  }
+
+  if (currentView === 'terms') {
+    return <TermsPage onBackToLanding={() => navigateTo('landing')} />;
+  }
+
+  if (currentView === 'privacy') {
+    return <PrivacyPage onBackToLanding={() => navigateTo('landing')} />;
   }
 
   // Payment pages

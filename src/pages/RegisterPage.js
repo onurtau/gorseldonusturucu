@@ -370,11 +370,11 @@ const RegisterPage = ({ onSwitchToLogin, onBackToLanding }) => {
             {/* Terms */}
             <div className="text-xs text-gray-600">
               {t('auth.register.terms')}{' '}
-              <a href="#" className="text-primary-400 hover:text-primary-300">
+              <a href="#terms" className="text-primary-400 hover:text-primary-300">
                 {t('auth.register.termsLink')}
               </a>
               {' '}{t('auth.register.and')}{' '}
-              <a href="#" className="text-primary-400 hover:text-primary-300">
+              <a href="#privacy" className="text-primary-400 hover:text-primary-300">
                 {t('auth.register.privacyLink')}
               </a>
               {t('auth.register.termsAgree')}

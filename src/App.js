@@ -15,6 +15,8 @@ import WatermarkPage from './pages/WatermarkPage';
 import ProfilePage from './pages/ProfilePage';
 import AuthRouter from './pages/AuthRouter';
 import AuthCallbackPage from './pages/AuthCallbackPage';
+import TermsPage from './pages/TermsPage';
+import PrivacyPage from './pages/PrivacyPage';
 import './index.css';
 
 // Ana içerik komponenti (LanguageProvider içinde kullanılacak)
@@ -201,6 +203,10 @@ function AppContent() {
         return <WatermarkPage />;
       case 'profile':
         return <ProfilePage />;
+      case 'terms':
+        return <TermsPage onBackToLanding={() => useAppStore.getState().setActiveView('home')} />;
+      case 'privacy':
+        return <PrivacyPage onBackToLanding={() => useAppStore.getState().setActiveView('home')} />;
       default:
         return <HomePage />;
     }

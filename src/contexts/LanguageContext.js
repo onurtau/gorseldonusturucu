@@ -946,6 +946,153 @@ const translations = {
       enterSixDigitCode: '6 haneli kod girin',
       sessionEnded: 'Oturum Sonlandırıldı',
       sessionEndedMessage: 'Cihaz oturumu başarıyla sonlandırıldı'
+    },
+
+    // Terms and Conditions
+    terms: {
+      title: 'Kullanım Şartları',
+      backButton: 'Geri Dön',
+      lastUpdated: 'Son Güncelleme',
+      acceptance: {
+        title: '1. Kabul ve Onay',
+        content1: 'Görsel Dönüştürücü uygulamasını kullanarak, bu kullanım şartlarını okuduğunuzu, anladığınızı ve kabul ettiğinizi beyan etmiş olursunuz.',
+        content2: 'Bu şartları kabul etmiyorsanız, lütfen uygulamayı kullanmayınız.'
+      },
+      service: {
+        title: '2. Hizmet Tanımı',
+        content: 'Görsel Dönüştürücü, kullanıcılara çeşitli görsel dosya formatları arasında dönüşüm yapma imkanı sunan bir masaüstü uygulamasıdır. Hizmetlerimiz şunları içerir:',
+        feature1: 'Görsel format dönüşümü (PNG, JPG, WebP, SVG vb.)',
+        feature2: 'Görsel boyutlandırma ve yeniden ölçeklendirme',
+        feature3: 'Renk uzayı dönüşümü (RGB, CMYK)',
+        feature4: 'Filigran ekleme ve toplu işleme',
+        feature5: 'Çoklu görsel işleme özellikleri'
+      },
+      accounts: {
+        title: '3. Kullanıcı Hesapları',
+        content: 'Uygulamayı kullanmak için bir hesap oluşturmanız gerekmektedir. Hesap oluştururken:',
+        rule1: 'Doğru ve güncel bilgiler sağlamalısınız',
+        rule2: 'Hesap güvenliğinden siz sorumlusunuz',
+        rule3: 'Şifrenizi kimseyle paylaşmamalısınız',
+        rule4: 'Hesabınızda gerçekleşen tüm aktivitelerden sorumlusunuz'
+      },
+      usage: {
+        title: '4. Kullanım Kuralları',
+        content: 'Uygulamayı kullanırken aşağıdaki davranışlar kesinlikle yasaktır:',
+        prohibition1: 'Yasadışı içerik işleme veya paylaşma',
+        prohibition2: 'Telif hakkı ihlali içeren görselleri işleme',
+        prohibition3: 'Uygulamanın güvenlik sistemlerini aşmaya çalışma',
+        prohibition4: 'Otomatik araçlar veya scriptler kullanarak hizmeti kötüye kullanma',
+        prohibition5: 'Başkalarının hesaplarına yetkisiz erişim sağlama'
+      },
+      privacy: {
+        title: '5. Gizlilik ve Veri Güvenliği',
+        content: 'Gizliliğiniz bizim için önemlidir:',
+        point1: 'İşlediğiniz görseller sunucularımızda saklanmaz',
+        point2: 'Tüm işlemler yerel cihazınızda gerçekleşir',
+        point3: 'Kişisel verileriniz şifrelenerek korunur',
+        point4: 'Verilerinizi üçüncü taraflarla paylaşmayız'
+      },
+      pricing: {
+        title: '6. Ücretlendirme ve Lisans',
+        content: 'Uygulama farklı lisans seçenekleri sunar:',
+        point1: 'Ücretsiz kullanıcılar sınırlı işlem hakkına sahiptir (5 işlem)',
+        point2: 'Premium üyelik sınırsız işlem imkanı sağlar',
+        point3: 'Ödemeler güvenli ödeme sistemleri üzerinden gerçekleşir',
+        point4: 'İptal ve iade politikası ödeme sayfasında belirtilmiştir'
+      },
+      disclaimer: {
+        title: '7. Sorumluluk Reddi',
+        content: 'Görsel Dönüştürücü, hizmetin kesintisiz veya hatasız olacağını garanti etmez. İşlediğiniz görsellerin kalitesinden ve içeriğinden siz sorumlusunuz. Uygulama kullanımından kaynaklanan herhangi bir veri kaybı veya hasar için sorumluluk kabul etmemekteyiz.'
+      },
+      changes: {
+        title: '8. Değişiklikler',
+        content: 'Bu kullanım şartlarında değişiklik yapma hakkını saklı tutarız. Önemli değişiklikler yapıldığında kullanıcılar bilgilendirilecektir.'
+      },
+      contact: {
+        title: '9. İletişim',
+        content: 'Kullanım şartları hakkında sorularınız için bizimle iletişime geçebilirsiniz:'
+      },
+      footer: 'Bu kullanım şartları, uygulamayı kullanırken tüm kullanıcılar için geçerlidir.'
+    },
+
+    // Privacy Policy
+    privacy: {
+      title: 'Gizlilik Politikası',
+      backButton: 'Geri Dön',
+      lastUpdated: 'Son Güncelleme',
+      intro: {
+        title: '1. Giriş',
+        content1: 'Görsel Dönüştürücü olarak gizliliğinize saygı duyuyor ve kişisel verilerinizin korunmasına önem veriyoruz.',
+        content2: 'Bu gizlilik politikası, uygulamayı kullanırken hangi bilgilerin toplandığını, nasıl kullanıldığını ve korunduğunu açıklamaktadır.'
+      },
+      dataCollection: {
+        title: '2. Toplanan Bilgiler',
+        content: 'Uygulamayı kullanırken aşağıdaki bilgileri topluyoruz:',
+        personalTitle: 'Kişisel Bilgiler:',
+        personal1: 'Ad ve Soyad',
+        personal2: 'E-posta adresi',
+        personal3: 'Hesap şifresi (şifrelenmiş olarak saklanır)',
+        usageTitle: 'Kullanım Verileri:',
+        usage1: 'İşlem geçmişi (format dönüşümleri, boyutlandırma işlemleri vb.)',
+        usage2: 'Uygulama kullanım istatistikleri',
+        usage3: 'Cihaz bilgileri (işletim sistemi, uygulama versiyonu)'
+      },
+      dataUsage: {
+        title: '3. Verilerin Kullanımı',
+        content: 'Topladığımız verileri şu amaçlarla kullanıyoruz:',
+        purpose1: 'Hesabınızı oluşturmak ve yönetmek',
+        purpose2: 'Hizmetlerimizi sağlamak ve geliştirmek',
+        purpose3: 'Kullanıcı deneyimini iyileştirmek',
+        purpose4: 'Teknik destek sağlamak',
+        purpose5: 'Önemli güncellemeler ve değişiklikler hakkında bilgilendirme yapmak'
+      },
+      imageProcessing: {
+        title: '4. Görsel Dosyaların İşlenmesi',
+        important: 'ÖNEMLİ: Gizliliğiniz Garantidir',
+        localProcessing: 'Tüm görsel işleme işlemleri yerel cihazınızda gerçekleşir. Görselleriniz asla sunucularımıza yüklenmez.',
+        point1: 'İşlediğiniz görseller sadece cihazınızda kalır',
+        point2: 'Hiçbir görsel verisi internet üzerinden iletilmez',
+        point3: 'Görsel içeriklerinize erişimimiz yoktur'
+      },
+      dataSecurity: {
+        title: '5. Veri Güvenliği',
+        content: 'Verilerinizin güvenliğini sağlamak için şu önlemleri alıyoruz:',
+        measure1: 'SSL/TLS şifreleme ile veri iletimi',
+        measure2: 'Güvenli veritabanı şifreleme',
+        measure3: 'Düzenli güvenlik güncellemeleri',
+        measure4: 'Erişim kontrol sistemleri'
+      },
+      cookies: {
+        title: '6. Çerezler (Cookies)',
+        content: 'Uygulama deneyiminizi iyileştirmek için çerezler kullanıyoruz:',
+        type1: 'Oturum çerezleri: Giriş durumunuzu korur',
+        type2: 'Tercih çerezleri: Dil ve tema ayarlarınızı saklar',
+        type3: 'Analitik çerezler: Kullanım istatistiklerini toplar'
+      },
+      thirdParty: {
+        title: '7. Üçüncü Taraf Hizmetler',
+        content: 'Uygulamamız aşağıdaki üçüncü taraf hizmetleri kullanmaktadır:',
+        service1: 'Supabase: Kimlik doğrulama ve veritabanı hizmetleri',
+        service2: 'Stripe: Güvenli ödeme işlemleri (planlanmış)'
+      },
+      userRights: {
+        title: '8. Kullanıcı Hakları',
+        content: 'Verileriniz üzerinde aşağıdaki haklara sahipsiniz:',
+        right1: 'Verilerinize erişim hakkı',
+        right2: 'Verilerin düzeltilmesini talep etme hakkı',
+        right3: 'Verilerin silinmesini talep etme hakkı (unutulma hakkı)',
+        right4: 'Veri işlemeye itiraz etme hakkı',
+        right5: 'Veri taşınabilirliği hakkı'
+      },
+      changes: {
+        title: '9. Politika Değişiklikleri',
+        content: 'Bu gizlilik politikasını zaman zaman güncelleyebiliriz. Önemli değişiklikler olduğunda e-posta ile bilgilendirileceksiniz.'
+      },
+      contact: {
+        title: '10. İletişim',
+        content: 'Gizlilik politikası veya verileriniz hakkında sorularınız için:'
+      },
+      footer: 'Bu gizlilik politikası, verilerin toplanması, kullanılması ve korunması hakkında tam bilgi sağlar.'
     }
   },
 
@@ -1875,6 +2022,153 @@ const translations = {
       enterSixDigitCode: 'Enter 6-digit code',
       sessionEnded: 'Session Ended',
       sessionEndedMessage: 'Device session successfully ended'
+    },
+
+    // Terms and Conditions
+    terms: {
+      title: 'Terms and Conditions',
+      backButton: 'Go Back',
+      lastUpdated: 'Last Updated',
+      acceptance: {
+        title: '1. Acceptance and Agreement',
+        content1: 'By using the Image Converter application, you acknowledge that you have read, understood, and agree to these terms of service.',
+        content2: 'If you do not agree to these terms, please do not use the application.'
+      },
+      service: {
+        title: '2. Service Description',
+        content: 'Image Converter is a desktop application that provides users with the ability to convert between various image file formats. Our services include:',
+        feature1: 'Image format conversion (PNG, JPG, WebP, SVG, etc.)',
+        feature2: 'Image resizing and rescaling',
+        feature3: 'Color space conversion (RGB, CMYK)',
+        feature4: 'Watermarking and batch processing',
+        feature5: 'Multiple image processing features'
+      },
+      accounts: {
+        title: '3. User Accounts',
+        content: 'You must create an account to use the application. When creating an account:',
+        rule1: 'You must provide accurate and current information',
+        rule2: 'You are responsible for account security',
+        rule3: 'You must not share your password with anyone',
+        rule4: 'You are responsible for all activities that occur under your account'
+      },
+      usage: {
+        title: '4. Usage Rules',
+        content: 'The following behaviors are strictly prohibited when using the application:',
+        prohibition1: 'Processing or sharing illegal content',
+        prohibition2: 'Processing images that violate copyright',
+        prohibition3: 'Attempting to bypass the application\'s security systems',
+        prohibition4: 'Abusing the service using automated tools or scripts',
+        prohibition5: 'Gaining unauthorized access to others\' accounts'
+      },
+      privacy: {
+        title: '5. Privacy and Data Security',
+        content: 'Your privacy is important to us:',
+        point1: 'Images you process are not stored on our servers',
+        point2: 'All processing occurs on your local device',
+        point3: 'Your personal data is encrypted and protected',
+        point4: 'We do not share your data with third parties'
+      },
+      pricing: {
+        title: '6. Pricing and Licensing',
+        content: 'The application offers different licensing options:',
+        point1: 'Free users have limited processing rights (5 operations)',
+        point2: 'Premium membership provides unlimited processing',
+        point3: 'Payments are processed through secure payment systems',
+        point4: 'Cancellation and refund policy is stated on the payment page'
+      },
+      disclaimer: {
+        title: '7. Disclaimer',
+        content: 'Image Converter does not guarantee that the service will be uninterrupted or error-free. You are responsible for the quality and content of the images you process. We do not accept responsibility for any data loss or damage resulting from the use of the application.'
+      },
+      changes: {
+        title: '8. Changes',
+        content: 'We reserve the right to modify these terms of service. Users will be notified when significant changes are made.'
+      },
+      contact: {
+        title: '9. Contact',
+        content: 'For questions about the terms of service, you can contact us:'
+      },
+      footer: 'These terms of service apply to all users when using the application.'
+    },
+
+    // Privacy Policy
+    privacy: {
+      title: 'Privacy Policy',
+      backButton: 'Go Back',
+      lastUpdated: 'Last Updated',
+      intro: {
+        title: '1. Introduction',
+        content1: 'At Image Converter, we respect your privacy and are committed to protecting your personal data.',
+        content2: 'This privacy policy explains what information is collected when using the application, how it is used, and how it is protected.'
+      },
+      dataCollection: {
+        title: '2. Information Collected',
+        content: 'When using the application, we collect the following information:',
+        personalTitle: 'Personal Information:',
+        personal1: 'Full Name',
+        personal2: 'Email address',
+        personal3: 'Account password (stored encrypted)',
+        usageTitle: 'Usage Data:',
+        usage1: 'Operation history (format conversions, resizing operations, etc.)',
+        usage2: 'Application usage statistics',
+        usage3: 'Device information (operating system, application version)'
+      },
+      dataUsage: {
+        title: '3. Use of Data',
+        content: 'We use the collected data for the following purposes:',
+        purpose1: 'To create and manage your account',
+        purpose2: 'To provide and improve our services',
+        purpose3: 'To enhance user experience',
+        purpose4: 'To provide technical support',
+        purpose5: 'To inform you about important updates and changes'
+      },
+      imageProcessing: {
+        title: '4. Image File Processing',
+        important: 'IMPORTANT: Your Privacy is Guaranteed',
+        localProcessing: 'All image processing operations occur on your local device. Your images are never uploaded to our servers.',
+        point1: 'Processed images remain only on your device',
+        point2: 'No image data is transmitted over the internet',
+        point3: 'We have no access to your image content'
+      },
+      dataSecurity: {
+        title: '5. Data Security',
+        content: 'We take the following measures to ensure the security of your data:',
+        measure1: 'SSL/TLS encryption for data transmission',
+        measure2: 'Secure database encryption',
+        measure3: 'Regular security updates',
+        measure4: 'Access control systems'
+      },
+      cookies: {
+        title: '6. Cookies',
+        content: 'We use cookies to improve your application experience:',
+        type1: 'Session cookies: Maintains your login status',
+        type2: 'Preference cookies: Stores your language and theme settings',
+        type3: 'Analytics cookies: Collects usage statistics'
+      },
+      thirdParty: {
+        title: '7. Third-Party Services',
+        content: 'Our application uses the following third-party services:',
+        service1: 'Supabase: Authentication and database services',
+        service2: 'Stripe: Secure payment processing (planned)'
+      },
+      userRights: {
+        title: '8. User Rights',
+        content: 'You have the following rights regarding your data:',
+        right1: 'Right to access your data',
+        right2: 'Right to request correction of data',
+        right3: 'Right to request deletion of data (right to be forgotten)',
+        right4: 'Right to object to data processing',
+        right5: 'Right to data portability'
+      },
+      changes: {
+        title: '9. Policy Changes',
+        content: 'We may update this privacy policy from time to time. You will be notified by email when significant changes occur.'
+      },
+      contact: {
+        title: '10. Contact',
+        content: 'For questions about the privacy policy or your data:'
+      },
+      footer: 'This privacy policy provides complete information about the collection, use, and protection of data.'
     }
   }
 };

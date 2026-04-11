@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { X, Crown, Check, CreditCard, Shield } from 'lucide-react';
 import useAppStore from '../store/useAppStore';
+import useAuthStore from '../store/useAuthStore';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const LicenseModal = () => {
   const { t } = useLanguage();
-  const { toggleLicenseModal, addNotification, setLicense } = useAppStore();
+  const { toggleLicenseModal, addNotification, setLicense, setActiveView } = useAppStore();
+  const { isAuthenticated } = useAuthStore();
   const [selectedPlan, setSelectedPlan] = useState('monthly');
   const [isProcessing, setIsProcessing] = useState(false);
 
@@ -84,6 +86,32 @@ const LicenseModal = () => {
       setIsProcessing(false);
       toggleLicenseModal();
     }, 2000);
+  };
+
+  const handleTermsClick = (e) => {
+    e.preventDefault();
+    if (isAuthenticated) {
+      // Authenticated kullanıcılar için modal kapat ve terms view'ına git
+      toggleLicenseModal();
+      setActiveView('terms');
+    } else {
+      // Public kullanıcılar için hash navigation kullan
+      window.location.hash = 'terms';
+      toggleLicenseModal();
+    }
+  };
+
+  const handlePrivacyClick = (e) => {
+    e.preventDefault();
+    if (isAuthenticated) {
+      // Authenticated kullanıcılar için modal kapat ve privacy view'ına git
+      toggleLicenseModal();
+      setActiveView('privacy');
+    } else {
+      // Public kullanıcılar için hash navigation kullan
+      window.location.hash = 'privacy';
+      toggleLicenseModal();
+    }
   };
 
   return (
@@ -236,8 +264,15 @@ const LicenseModal = () => {
           </button>
 
           <p className="text-center text-xs text-gray-500 mt-4">
-            {t('license.agreeText')} <a href="#" className="text-primary-400 hover:underline">{t('license.termsAndConditions')}</a> {t('license.and')}{' '}
-            <a href="#" className="text-primary-400 hover:underline">{t('license.privacyPolicy')}</a> {t('license.acceptText')}
+            {t('license.agreeText')}{' '}
+            <a href="#terms" onClick={handleTermsClick} className="text-primary-400 hover:underline">
+              {t('license.termsAndConditions')}
+            </a>{' '}
+            {t('license.and')}{' '}
+            <a href="#privacy" onClick={handlePrivacyClick} className="text-primary-400 hover:underline">
+              {t('license.privacyPolicy')}
+            </a>{' '}
+            {t('license.acceptText')}
           </p>
         </div>
       </div>
