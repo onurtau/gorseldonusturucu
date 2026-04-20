@@ -59,26 +59,26 @@ const Header = React.memo(() => {
             {ui.activeView !== 'home' && (
               <button
                 onClick={() => setActiveView('home')}
-                className="ml-4 flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 dark:bg-dark-700 dark:hover:bg-dark-600 rounded-lg transition-colors text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
+                className="ml-2 sm:ml-4 flex items-center gap-1.5 sm:gap-2 px-2 py-1.5 sm:px-4 sm:py-2 bg-gray-100 hover:bg-gray-200 dark:bg-dark-700 dark:hover:bg-dark-600 rounded-lg transition-colors text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
               >
-                <Home className="w-4 h-4" />
-                <span className="text-sm font-medium">{t('header.home')}</span>
+                <Home className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                <span className="text-xs sm:text-sm font-medium hidden sm:inline">{t('header.home')}</span>
               </button>
             )}
           </div>
 
           {/* Sağ Menü */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-1.5 sm:space-x-3">
             {/* Lisans Durumu */}
             <div className="flex items-center space-x-3">
               {license.hasLicense && license.isActive ? (
-                <div className="flex items-center gap-2 bg-gradient-to-r from-yellow-500 to-orange-500 px-4 py-2 rounded-lg">
-                  <Crown className="w-5 h-5 text-white" />
-                  <span className="text-white font-semibold">{t('header.premium')}</span>
+                <div className="flex items-center gap-1.5 sm:gap-2 bg-gradient-to-r from-yellow-500 to-orange-500 px-2 py-1.5 sm:px-4 sm:py-2 rounded-lg">
+                  <Crown className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+                  <span className="text-white text-xs sm:text-sm font-semibold">{t('header.premium')}</span>
                 </div>
               ) : (
-                <div className="flex items-center gap-3">
-                  <div className="text-right">
+                <div className="flex items-center gap-1.5 sm:gap-3">
+                  <div className="text-right hidden sm:block">
                     <p className="text-xs text-gray-500 dark:text-gray-400">{t('header.freeUsage')}</p>
                     <p className="text-sm font-semibold text-gray-900 dark:text-white">
                       {license.usageCount} / {license.freeLimit}
@@ -86,10 +86,11 @@ const Header = React.memo(() => {
                   </div>
                   <button
                     onClick={toggleLicenseModal}
-                    className="bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white px-4 py-2 rounded-lg font-semibold transition-all btn-hover-scale flex items-center gap-2"
+                    className="bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white px-2 py-1.5 sm:px-4 sm:py-2 rounded-lg font-semibold transition-all btn-hover-scale flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm"
                   >
-                    <Crown className="w-4 h-4" />
-                    {t('header.upgradeToPremium')}
+                    <Crown className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                    <span className="hidden xs:inline">{t('header.upgradeToPremium')}</span>
+                    <span className="inline xs:hidden">Premium</span>
                   </button>
                 </div>
               )}
@@ -98,10 +99,10 @@ const Header = React.memo(() => {
             {/* Ayarlar Butonu */}
             <button
               onClick={toggleSettingsModal}
-              className="p-2 hover:bg-gray-100 dark:hover:bg-dark-700 rounded-lg transition-colors"
+              className="p-1.5 sm:p-2 hover:bg-gray-100 dark:hover:bg-dark-700 rounded-lg transition-colors"
               title={t('header.settings')}
             >
-              <Settings className="w-6 h-6 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors" />
+              <Settings className="w-5 h-5 sm:w-6 sm:h-6 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors" />
             </button>
 
             {/* Profil Menüsü */}
@@ -109,10 +110,10 @@ const Header = React.memo(() => {
               <div className="relative" ref={profileMenuRef}>
                 <button
                   onClick={() => setShowProfileMenu(!showProfileMenu)}
-                  className="flex items-center gap-2 px-3 py-2 hover:bg-gray-100 dark:hover:bg-dark-700 rounded-lg transition-colors group"
+                  className="flex items-center gap-1 sm:gap-2 px-2 py-1.5 sm:px-3 sm:py-2 hover:bg-gray-100 dark:hover:bg-dark-700 rounded-lg transition-colors group"
                 >
                   {/* Avatar */}
-                  <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary-500 to-purple-600 flex items-center justify-center overflow-hidden">
+                  <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gradient-to-br from-primary-500 to-purple-600 flex items-center justify-center overflow-hidden">
                     {user.avatar ? (
                       <img 
                         src={user.avatar} 
@@ -120,18 +121,18 @@ const Header = React.memo(() => {
                         className="w-full h-full object-cover"
                       />
                     ) : (
-                      <User className="w-5 h-5 text-white" />
+                      <User className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                     )}
                   </div>
                   
                   {/* Kullanıcı Adı */}
-                  <span className="text-sm text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white transition-colors hidden md:block">
+                  <span className="text-xs sm:text-sm text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white transition-colors hidden md:block">
                     {user.name || user.email}
                   </span>
                   
                   {/* Dropdown Icon */}
                   <ChevronDown 
-                    className={`w-4 h-4 text-gray-600 dark:text-gray-400 transition-transform ${
+                    className={`w-3.5 h-3.5 sm:w-4 sm:h-4 text-gray-600 dark:text-gray-400 transition-transform ${
                       showProfileMenu ? 'rotate-180' : ''
                     }`}
                   />
