@@ -64,7 +64,7 @@ const HomePage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-dark-900 via-dark-800 to-dark-900">
       {/* Hero Section */}
-      <div className="container mx-auto px-6 py-8">
+      <div className="container mx-auto px-3 sm:px-6 py-4 sm:py-8">
         <div className="text-center mb-10">
           <h1 className="text-4xl font-bold text-white mb-3">
             {t('home.title')}
@@ -80,7 +80,7 @@ const HomePage = () => {
             {t('home.selectOperation')}
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-4">
             {features.map((feature) => {
               const Icon = feature.icon;
               
@@ -90,7 +90,7 @@ const HomePage = () => {
                   onClick={() => setActiveView(feature.id)}
                   className={`
                     relative group
-                    bg-dark-800 border border-dark-700 rounded-xl p-4
+                    bg-dark-800 border border-dark-700 rounded-xl p-3 sm:p-4
                     transition-all duration-300
                     hover:border-primary-500 hover:shadow-lg hover:shadow-primary-500/20
                     hover:scale-102

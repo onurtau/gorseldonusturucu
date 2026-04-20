@@ -14,7 +14,7 @@ const MultiPage = ({ onBackToLanding }) => {
   }, [setActiveView]);
 
   return (
-    <main className="container mx-auto px-4 py-4 max-w-7xl">
+    <main className="container mx-auto px-2 sm:px-4 py-2 sm:py-4 max-w-7xl">
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
         {/* Sol Panel - Önizleme, Yükleme, Liste (3/4 genişlik) */}
         <div className="lg:col-span-3 space-y-4">

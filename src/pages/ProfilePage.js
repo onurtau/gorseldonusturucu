@@ -373,7 +373,7 @@ const ProfilePage = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8 max-w-5xl">
+    <div className="container mx-auto px-2 sm:px-4 py-4 sm:py-8 max-w-5xl">
       {/* Header */}
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-white mb-2">{t('profilePage.title')}</h1>

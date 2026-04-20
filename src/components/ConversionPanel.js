@@ -557,7 +557,7 @@ const ConversionPanel = React.memo(() => {
   };
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-2 sm:space-y-4">
       {/* İşlem Durum Çubuğu - Pause/Resume/Cancel */}
       <ProcessingStatusBar onResume={handleConvert} />
 
@@ -566,7 +566,7 @@ const ConversionPanel = React.memo(() => {
         {/* Başlık - Tıklanabilir */}
         <button
           onClick={() => setIsConversionSettingsOpen(!isConversionSettingsOpen)}
-          className="w-full p-4 border-b border-dark-700 flex items-center justify-between hover:bg-dark-700 transition-colors"
+          className="w-full p-2 sm:p-4 border-b border-dark-700 flex items-center justify-between hover:bg-dark-700 transition-colors"
         >
           <div className="flex items-center gap-2">
             <Settings2 className="w-5 h-5 text-primary-400" />
@@ -581,7 +581,7 @@ const ConversionPanel = React.memo(() => {
 
         {/* İçerik */}
         {isConversionSettingsOpen && (
-          <div className="p-4 space-y-4">
+          <div className="p-2 sm:p-4 space-y-3 sm:space-y-4">
             {/* Çıktı Formatı */}
             <div>
               <label className="block text-sm font-medium text-gray-300 mb-2">
@@ -590,7 +590,7 @@ const ConversionPanel = React.memo(() => {
               <select
                 value={conversionSettings.outputFormat}
                 onChange={(e) => updateConversionSettings({ outputFormat: e.target.value })}
-                className="w-full bg-dark-700 border border-dark-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary-500"
+                className="w-full bg-dark-700 border border-dark-600 rounded-lg px-2 sm:px-4 py-1.5 sm:py-2 text-sm sm:text-base text-white focus:outline-none focus:ring-2 focus:ring-primary-500"
               >
                 <option value="jpg">{t('conversionPanel.formats.jpeg')}</option>
                 <option value="png">{t('conversionPanel.formats.png')}</option>
@@ -634,7 +634,7 @@ const ConversionPanel = React.memo(() => {
                 onChange={(e) => updateConversionSettings({ 
                   targetSize: e.target.value ? parseInt(e.target.value) : null 
                 })}
-                className="w-full bg-dark-700 border border-dark-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary-500"
+                className="w-full bg-dark-700 border border-dark-600 rounded-lg px-2 sm:px-4 py-1.5 sm:py-2 text-sm sm:text-base text-white focus:outline-none focus:ring-2 focus:ring-primary-500"
               />
               <p className="text-xs text-gray-500 mt-1">
                 {t('conversionPanel.targetFileSizeHint')}
@@ -652,7 +652,7 @@ const ConversionPanel = React.memo(() => {
                 onChange={(e) => updateConversionSettings({ 
                   convertColorSpace: e.target.value || null 
                 })}
-                className="w-full bg-dark-700 border border-dark-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary-500"
+                className="w-full bg-dark-700 border border-dark-600 rounded-lg px-2 sm:px-4 py-1.5 sm:py-2 text-sm sm:text-base text-white focus:outline-none focus:ring-2 focus:ring-primary-500"
               >
                 <option value="">{t('conversionPanel.colorSpaceOptions.dontConvert')}</option>
                 <option value="rgb">{t('conversionPanel.colorSpaceOptions.toRgb')}</option>

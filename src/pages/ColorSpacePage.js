@@ -417,7 +417,7 @@ const ColorSpacePage = ({ onBackToLanding }) => {
   };
 
   return (
-    <main className="container mx-auto px-4 py-4 max-w-5xl">
+    <main className="container mx-auto px-2 sm:px-4 py-2 sm:py-4 max-w-5xl">
       <div className="mb-5">
         <h2 className="text-2xl font-bold text-white mb-2 flex items-center gap-2">
           <Palette className="w-7 h-7 text-purple-400" />

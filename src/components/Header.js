@@ -77,8 +77,8 @@ const Header = React.memo(() => {
                   <span className="text-white text-xs sm:text-sm font-semibold">{t('header.premium')}</span>
                 </div>
               ) : (
-                <div className="flex items-center gap-1.5 sm:gap-3">
-                  <div className="text-right hidden sm:block">
+                <div className="hidden lg:flex items-center gap-3">
+                  <div className="text-right">
                     <p className="text-xs text-gray-500 dark:text-gray-400">{t('header.freeUsage')}</p>
                     <p className="text-sm font-semibold text-gray-900 dark:text-white">
                       {license.usageCount} / {license.freeLimit}
@@ -86,11 +86,10 @@ const Header = React.memo(() => {
                   </div>
                   <button
                     onClick={toggleLicenseModal}
-                    className="bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white px-2 py-1.5 sm:px-4 sm:py-2 rounded-lg font-semibold transition-all btn-hover-scale flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm"
+                    className="bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white px-4 py-2 rounded-lg font-semibold transition-all btn-hover-scale flex items-center gap-2"
                   >
-                    <Crown className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                    <span className="hidden xs:inline">{t('header.upgradeToPremium')}</span>
-                    <span className="inline xs:hidden">Premium</span>
+                    <Crown className="w-4 h-4" />
+                    {t('header.upgradeToPremium')}
                   </button>
                 </div>
               )}

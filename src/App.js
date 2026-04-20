@@ -6,6 +6,7 @@ import Header from './components/Header';
 import LicenseModal from './components/LicenseModal';
 import SettingsModal from './components/SettingsModal';
 import NotificationContainer from './components/NotificationContainer';
+import FloatingPremiumButton from './components/FloatingPremiumButton';
 import HomePage from './pages/HomePage';
 import MultiPage from './pages/MultiPage';
 import FormatConversionPage from './pages/FormatConversionPage';
@@ -265,6 +266,9 @@ function AppContent() {
       
       {/* Bildirimler */}
       <NotificationContainer />
+      
+      {/* Floating Premium Button (Sadece mobil) */}
+      <FloatingPremiumButton />
     </div>
   );
 }
