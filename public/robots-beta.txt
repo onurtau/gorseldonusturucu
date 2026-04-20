@@ -1,0 +1,3 @@
+# Beta sitesi - Arama motorlarından gizle
+User-agent: *
+Disallow: /

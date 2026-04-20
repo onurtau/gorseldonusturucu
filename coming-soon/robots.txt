@@ -1,0 +1,5 @@
+# Coming Soon sayfası - Arama motorlarına izin ver
+User-agent: *
+Allow: /
+
+Sitemap: https://www.zylorpix.com/sitemap.xml
