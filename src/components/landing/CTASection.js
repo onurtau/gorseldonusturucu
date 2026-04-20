@@ -13,7 +13,7 @@ const CTASection = ({ onGetStarted }) => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+    <section className="py-8 sm:py-20 px-2 sm:px-4 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary-500/10 via-transparent to-purple-500/10" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-primary-500/10 rounded-full blur-3xl" />

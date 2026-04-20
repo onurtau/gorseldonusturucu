@@ -49,10 +49,10 @@ const ToolsSection = ({ navigateTo }) => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-gray-50">
-      <div className="container mx-auto px-4 max-w-7xl">
+    <section className="py-8 sm:py-20 bg-gradient-to-b from-white to-gray-50">
+      <div className="container mx-auto px-2 sm:px-4 max-w-7xl">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-8 sm:mb-16">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
             {t('landing.tools.title')}
           </h2>
@@ -62,14 +62,14 @@ const ToolsSection = ({ navigateTo }) => {
         </div>
 
         {/* Tools Grid - 5 columns */}
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-6">
           {tools.map((tool) => {
             const Icon = tool.icon;
             return (
               <button
                 key={tool.id}
                 onClick={() => navigateTo(tool.id)}
-                className="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 text-left border-2 border-transparent hover:border-blue-500 transform hover:-translate-y-2"
+                className="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 p-4 sm:p-6 text-left border-2 border-transparent hover:border-blue-500 transform hover:-translate-y-2"
               >
                 {/* Icon with gradient background */}
                 <div className={`w-16 h-16 rounded-lg bg-gradient-to-br ${tool.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>

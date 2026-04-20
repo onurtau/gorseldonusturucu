@@ -23,7 +23,7 @@ const PublicHeader = ({ onLoginClick, onRegisterClick, onBackToLanding }) => {
 
   return (
     <header className="bg-white/95 border-b border-gray-200 sticky top-0 z-50 backdrop-blur-sm">
-      <div className="container mx-auto px-4 py-1.5 max-w-7xl">
+      <div className="container mx-auto px-2 sm:px-4 py-1.5 max-w-7xl">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-3">
@@ -56,10 +56,10 @@ const PublicHeader = ({ onLoginClick, onRegisterClick, onBackToLanding }) => {
           </div>
 
           {/* Right Menu */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-1.5 sm:gap-3">
             {/* Trial Counter (sadece kayıtsız kullanıcılar için) */}
             {remainingTrials !== null && isFinite(remainingTrials) && (
-              <div className="flex items-center gap-2 px-4 py-2 bg-blue-50 border border-blue-200 rounded-lg">
+              <div className="hidden sm:flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-blue-50 border border-blue-200 rounded-lg">
                 <div className="flex flex-col items-end">
                   <span className="text-xs text-blue-600 font-medium">Ücretsiz Deneme</span>
                   <span className="text-sm font-bold text-blue-900">{remainingTrials} / 50</span>
@@ -70,17 +70,17 @@ const PublicHeader = ({ onLoginClick, onRegisterClick, onBackToLanding }) => {
             {/* Language Toggle */}
             <button
               onClick={() => changeLanguage(language === 'tr' ? 'en' : 'tr')}
-              className="flex items-center gap-2 px-3 py-2 bg-gray-100 hover:bg-gray-200 border border-gray-300 rounded-lg transition-colors text-gray-700 hover:text-gray-900"
+              className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 bg-gray-100 hover:bg-gray-200 border border-gray-300 rounded-lg transition-colors text-gray-700 hover:text-gray-900"
               title="Change Language"
             >
               <Globe className="w-4 h-4" />
-              <span className="font-medium text-sm">{language === 'tr' ? 'TR' : 'EN'}</span>
+              <span className="font-medium text-xs sm:text-sm">{language === 'tr' ? 'TR' : 'EN'}</span>
             </button>
 
             {/* Download Desktop Button */}
             <button
               onClick={handleDownloadDesktop}
-              className="flex items-center gap-2 px-3 py-2 bg-gray-100 hover:bg-gray-200 border border-gray-300 rounded-lg transition-colors text-gray-700 hover:text-gray-900"
+              className="hidden md:flex items-center gap-2 px-3 py-2 bg-gray-100 hover:bg-gray-200 border border-gray-300 rounded-lg transition-colors text-gray-700 hover:text-gray-900"
               title={t('header.downloadDesktop')}
             >
               <Download className="w-4 h-4" />
@@ -90,7 +90,7 @@ const PublicHeader = ({ onLoginClick, onRegisterClick, onBackToLanding }) => {
             {/* Login Button */}
             <button
               onClick={onLoginClick}
-              className="px-4 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors font-medium"
+              className="hidden sm:block px-3 sm:px-4 py-1.5 sm:py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors font-medium text-xs sm:text-sm"
             >
               {t('header.login')}
             </button>
@@ -98,7 +98,7 @@ const PublicHeader = ({ onLoginClick, onRegisterClick, onBackToLanding }) => {
             {/* Register Button */}
             <button
               onClick={onRegisterClick}
-              className="px-5 py-2 bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white rounded-lg font-semibold transition-all shadow-lg shadow-primary-500/20"
+              className="px-3 sm:px-5 py-1.5 sm:py-2 bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white rounded-lg font-semibold transition-all shadow-lg shadow-primary-500/20 text-xs sm:text-sm"
             >
               {language === 'tr' ? 'Premium\'a Geç' : 'Upgrade to Premium'}
             </button>

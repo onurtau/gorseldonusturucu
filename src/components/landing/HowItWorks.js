@@ -30,7 +30,7 @@ const HowItWorks = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden">
+    <section className="py-8 sm:py-20 px-2 sm:px-4 bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden">
       {/* Background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-500/5 rounded-full blur-3xl" />
       

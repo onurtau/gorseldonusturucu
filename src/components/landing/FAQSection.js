@@ -20,13 +20,13 @@ const FAQSection = () => {
   };
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden">
+    <section className="py-8 sm:py-20 px-2 sm:px-4 bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden">
       {/* Background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary-500/5 rounded-full blur-3xl" />
       
       <div className="max-w-4xl mx-auto relative z-10">
         {/* Section header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-8 sm:mb-16">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
             {t('landing.faq.title')}
           </h2>
@@ -36,7 +36,7 @@ const FAQSection = () => {
         </div>
 
         {/* FAQ Accordion */}
-        <div className="space-y-4">
+        <div className="space-y-2 sm:space-y-4">
           {faqs.map((faq, index) => (
             <div
               key={index}
@@ -45,7 +45,7 @@ const FAQSection = () => {
               {/* Question */}
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full px-6 py-5 flex items-center justify-between text-left group"
+                className="w-full px-3 sm:px-6 py-3 sm:py-5 flex items-center justify-between text-left group"
               >
                 <span className="text-gray-900 font-semibold text-lg pr-4">
                   {t(`landing.faq.${faq.questionKey}`)}
@@ -63,7 +63,7 @@ const FAQSection = () => {
                   openIndex === index ? 'max-h-96' : 'max-h-0'
                 }`}
               >
-                <div className="px-6 pb-5 text-gray-600 border-t border-gray-200 pt-4">
+                <div className="px-3 sm:px-6 pb-3 sm:pb-5 text-gray-600 border-t border-gray-200 pt-3 sm:pt-4">
                   {t(`landing.faq.${faq.answerKey}`)}
                 </div>
               </div>

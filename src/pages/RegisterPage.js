@@ -99,13 +99,13 @@ const RegisterPage = ({ onSwitchToLogin, onBackToLanding }) => {
   // Email doğrulama başarılı ekranı
   if (registrationSuccess) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-white via-gray-50 to-white flex items-center justify-center p-4">
+      <div className="min-h-screen bg-gradient-to-br from-white via-gray-50 to-white flex items-center justify-center p-2 sm:p-4">
         {/* Back Button - Sol Üst Köşe */}
         {onBackToLanding && (
-          <div className="absolute top-4 left-4">
+          <div className="absolute top-2 sm:top-4 left-2 sm:left-4">
             <button
               onClick={onBackToLanding}
-              className="flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 border border-gray-300 rounded-lg transition-colors text-gray-700 hover:text-gray-900 group"
+              className="flex items-center gap-2 px-2 sm:px-4 py-1.5 sm:py-2 bg-gray-100 hover:bg-gray-200 border border-gray-300 rounded-lg transition-colors text-gray-700 hover:text-gray-900 group"
               title="Geri"
             >
               <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
@@ -114,10 +114,10 @@ const RegisterPage = ({ onSwitchToLogin, onBackToLanding }) => {
         )}
         
         {/* Language Toggle - Sağ Üst Köşe */}
-        <div className="absolute top-4 right-4">
+        <div className="absolute top-2 sm:top-4 right-2 sm:right-4">
           <button
             onClick={() => changeLanguage(language === 'tr' ? 'en' : 'tr')}
-            className="flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 border border-gray-300 rounded-lg transition-colors text-gray-700 hover:text-gray-900"
+            className="flex items-center gap-2 px-2 sm:px-4 py-1.5 sm:py-2 bg-gray-100 hover:bg-gray-200 border border-gray-300 rounded-lg transition-colors text-gray-700 hover:text-gray-900"
             title="Dil Değiştir / Change Language"
           >
             <Globe className="w-4 h-4" />
@@ -165,13 +165,13 @@ const RegisterPage = ({ onSwitchToLogin, onBackToLanding }) => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white via-gray-50 to-white flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-white via-gray-50 to-white flex items-center justify-center p-2 sm:p-4">
       {/* Back Button - Sol Üst Köşe */}
       {onBackToLanding && (
-        <div className="absolute top-4 left-4">
+        <div className="absolute top-2 sm:top-4 left-2 sm:left-4">
           <button
             onClick={onBackToLanding}
-            className="flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 border border-gray-300 rounded-lg transition-colors text-gray-700 hover:text-gray-900 group"
+            className="flex items-center gap-2 px-2 sm:px-4 py-1.5 sm:py-2 bg-gray-100 hover:bg-gray-200 border border-gray-300 rounded-lg transition-colors text-gray-700 hover:text-gray-900 group"
             title="Geri"
           >
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
@@ -180,10 +180,10 @@ const RegisterPage = ({ onSwitchToLogin, onBackToLanding }) => {
       )}
       
       {/* Language Toggle - Sağ Üst Köşe */}
-      <div className="absolute top-4 right-4">
+      <div className="absolute top-2 sm:top-4 right-2 sm:right-4">
         <button
           onClick={() => changeLanguage(language === 'tr' ? 'en' : 'tr')}
-          className="flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 border border-gray-300 rounded-lg transition-colors text-gray-700 hover:text-gray-900"
+          className="flex items-center gap-2 px-2 sm:px-4 py-1.5 sm:py-2 bg-gray-100 hover:bg-gray-200 border border-gray-300 rounded-lg transition-colors text-gray-700 hover:text-gray-900"
           title="Dil Değiştir / Change Language"
         >
           <Globe className="w-4 h-4" />
@@ -202,7 +202,7 @@ const RegisterPage = ({ onSwitchToLogin, onBackToLanding }) => {
         </div>
 
         {/* Register Card */}
-        <div className="bg-white rounded-2xl shadow-xl border border-gray-200 p-8">
+        <div className="bg-white rounded-2xl shadow-xl border border-gray-200 p-4 sm:p-8">
           {/* Error Message */}
           {error && (
             <div className="mb-6 p-4 bg-red-500/10 border border-red-500/20 rounded-lg flex items-start gap-3">

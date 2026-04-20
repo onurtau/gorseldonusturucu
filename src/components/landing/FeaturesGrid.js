@@ -57,7 +57,7 @@ const FeaturesGrid = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-gray-50 relative overflow-hidden">
+    <section className="py-8 sm:py-20 px-2 sm:px-4 bg-gray-50 relative overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0 bg-gradient-to-b from-white via-gray-50 to-gray-50" />
       
