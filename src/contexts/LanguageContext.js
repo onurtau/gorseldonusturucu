@@ -10,7 +10,7 @@ const translations = {
 
     // Header
     header: {
-      title: 'Görsel Dönüştürücü',
+      title: 'Zylorpix',
       subtitle: 'Profesyonel Görüntü İşleme',
       usageCount: 'Kullanım Kullanılabilir',
       unlimited: 'Sınırsız',
@@ -33,7 +33,7 @@ const translations = {
       // Login Page
       login: {
         welcome: 'Hoş Geldiniz',
-        subtitle: 'Görsel Dönüştürücü\'ye giriş yapın',
+        subtitle: 'Zylorpix\'e giriş yapın',
         email: 'E-posta',
         emailPlaceholder: 'ornek@email.com',
         password: 'Şifre',
@@ -54,7 +54,7 @@ const translations = {
       // Register Page
       register: {
         createAccount: 'Hesap Oluşturun',
-        subtitle: 'Görsel Dönüştürücü\'ye katılın',
+        subtitle: 'Zylorpix\'e katılın',
         fullName: 'Ad Soyad',
         fullNamePlaceholder: 'Ahmet Yılmaz',
         email: 'E-posta',
@@ -110,7 +110,7 @@ const translations = {
 
       // Footer
       footer: {
-        copyright: '© 2026 Görsel Dönüştürücü. Tüm hakları saklıdır.'
+        copyright: '© 2026 Zylorpix. Tüm hakları saklıdır.'
       }
     },
 
@@ -314,7 +314,7 @@ const translations = {
 
     // HomePage
     home: {
-      title: 'Görsel Dönüştürücü',
+      title: 'Zylorpix',
       subtitle: 'Profesyonel görsel işleme araçlarıyla çalışmalarınızı hızlandırın',
       selectOperation: 'Bir işlem seçin',
       features: {
@@ -689,7 +689,7 @@ const translations = {
       version: 'Versiyon',
       description: 'Profesyonel görsel dönüştürme ve optimizasyon uygulaması. Format dönüştürme, boyut küçültme, renk uzayı dönüşümü ve filigran ekleme özellikleriyle görsellerinizi yönetin.',
       technologies: 'Teknolojiler',
-      copyright: '© 2026 Görsel Dönüştürücü. Tüm hakları saklıdır.',
+      copyright: '© 2026 Zylorpix. Tüm hakları saklıdır.',
       
       // Actions
       save: 'Kaydet',
@@ -955,12 +955,12 @@ const translations = {
       lastUpdated: 'Son Güncelleme',
       acceptance: {
         title: '1. Kabul ve Onay',
-        content1: 'Görsel Dönüştürücü uygulamasını kullanarak, bu kullanım şartlarını okuduğunuzu, anladığınızı ve kabul ettiğinizi beyan etmiş olursunuz.',
+        content1: 'Zylorpix uygulamasını kullanarak, bu kullanım şartlarını okuduğunuzu, anladığınızı ve kabul ettiğinizi beyan etmiş olursunuz.',
         content2: 'Bu şartları kabul etmiyorsanız, lütfen uygulamayı kullanmayınız.'
       },
       service: {
         title: '2. Hizmet Tanımı',
-        content: 'Görsel Dönüştürücü, kullanıcılara çeşitli görsel dosya formatları arasında dönüşüm yapma imkanı sunan bir masaüstü uygulamasıdır. Hizmetlerimiz şunları içerir:',
+        content: 'Zylorpix, kullanıcılara çeşitli görsel dosya formatları arasında dönüşüm yapma imkanı sunan bir masaüstü uygulamasıdır. Hizmetlerimiz şunları içerir:',
         feature1: 'Görsel format dönüşümü (PNG, JPG, WebP, SVG vb.)',
         feature2: 'Görsel boyutlandırma ve yeniden ölçeklendirme',
         feature3: 'Renk uzayı dönüşümü (RGB, CMYK)',
@@ -1002,7 +1002,7 @@ const translations = {
       },
       disclaimer: {
         title: '7. Sorumluluk Reddi',
-        content: 'Görsel Dönüştürücü, hizmetin kesintisiz veya hatasız olacağını garanti etmez. İşlediğiniz görsellerin kalitesinden ve içeriğinden siz sorumlusunuz. Uygulama kullanımından kaynaklanan herhangi bir veri kaybı veya hasar için sorumluluk kabul etmemekteyiz.'
+        content: 'Zylorpix, hizmetin kesintisiz veya hatasız olacağını garanti etmez. İşlediğiniz görsellerin kalitesinden ve içeriğinden siz sorumlusunuz. Uygulama kullanımından kaynaklanan herhangi bir veri kaybı veya hasar için sorumluluk kabul etmemekteyiz.'
       },
       changes: {
         title: '8. Değişiklikler',
@@ -1022,7 +1022,7 @@ const translations = {
       lastUpdated: 'Son Güncelleme',
       intro: {
         title: '1. Giriş',
-        content1: 'Görsel Dönüştürücü olarak gizliliğinize saygı duyuyor ve kişisel verilerinizin korunmasına önem veriyoruz.',
+        content1: 'Zylorpix olarak gizliliğinize saygı duyuyor ve kişisel verilerinizin korunmasına önem veriyoruz.',
         content2: 'Bu gizlilik politikası, uygulamayı kullanırken hangi bilgilerin toplandığını, nasıl kullanıldığını ve korunduğunu açıklamaktadır.'
       },
       dataCollection: {
@@ -1104,7 +1104,7 @@ const translations = {
 
     // Header
     header: {
-      title: 'Image Converter',
+      title: 'Zylorpix',
       subtitle: 'Professional Image Processing',
       usageCount: 'Usage Available',
       unlimited: 'Unlimited',
@@ -1127,7 +1127,7 @@ const translations = {
       // Login Page
       login: {
         welcome: 'Welcome',
-        subtitle: 'Sign in to Image Converter',
+        subtitle: 'Sign in to Zylorpix',
         email: 'Email',
         emailPlaceholder: 'example@email.com',
         password: 'Password',
@@ -1148,7 +1148,7 @@ const translations = {
       // Register Page
       register: {
         createAccount: 'Create Account',
-        subtitle: 'Join Image Converter',
+        subtitle: 'Join Zylorpix',
         fullName: 'Full Name',
         fullNamePlaceholder: 'John Doe',
         email: 'Email',
@@ -1204,7 +1204,7 @@ const translations = {
 
       // Footer
       footer: {
-        copyright: '© 2026 Image Converter. All rights reserved.'
+        copyright: '© 2026 Zylorpix. All rights reserved.'
       }
     },
 
@@ -1408,7 +1408,7 @@ const translations = {
 
     // HomePage
     home: {
-      title: 'Image Converter',
+      title: 'Zylorpix',
       subtitle: 'Speed up your work with professional image processing tools',
       selectOperation: 'Select an operation',
       features: {
@@ -1765,7 +1765,7 @@ const translations = {
       version: 'Version',
       description: 'Professional image conversion and optimization application. Manage your images with format conversion, resizing, color space conversion and watermark features.',
       technologies: 'Technologies',
-      copyright: '© 2026 Image Converter. All rights reserved.',
+      copyright: '© 2026 Zylorpix. All rights reserved.',
       
       // Actions
       save: 'Save',
@@ -2031,12 +2031,12 @@ const translations = {
       lastUpdated: 'Last Updated',
       acceptance: {
         title: '1. Acceptance and Agreement',
-        content1: 'By using the Image Converter application, you acknowledge that you have read, understood, and agree to these terms of service.',
+        content1: 'By using the Zylorpix application, you acknowledge that you have read, understood, and agree to these terms of service.',
         content2: 'If you do not agree to these terms, please do not use the application.'
       },
       service: {
         title: '2. Service Description',
-        content: 'Image Converter is a desktop application that provides users with the ability to convert between various image file formats. Our services include:',
+        content: 'Zylorpix is a desktop application that provides users with the ability to convert between various image file formats. Our services include:',
         feature1: 'Image format conversion (PNG, JPG, WebP, SVG, etc.)',
         feature2: 'Image resizing and rescaling',
         feature3: 'Color space conversion (RGB, CMYK)',
@@ -2078,7 +2078,7 @@ const translations = {
       },
       disclaimer: {
         title: '7. Disclaimer',
-        content: 'Image Converter does not guarantee that the service will be uninterrupted or error-free. You are responsible for the quality and content of the images you process. We do not accept responsibility for any data loss or damage resulting from the use of the application.'
+        content: 'Zylorpix does not guarantee that the service will be uninterrupted or error-free. You are responsible for the quality and content of the images you process. We do not accept responsibility for any data loss or damage resulting from the use of the application.'
       },
       changes: {
         title: '8. Changes',
@@ -2098,7 +2098,7 @@ const translations = {
       lastUpdated: 'Last Updated',
       intro: {
         title: '1. Introduction',
-        content1: 'At Image Converter, we respect your privacy and are committed to protecting your personal data.',
+        content1: 'At Zylorpix, we respect your privacy and are committed to protecting your personal data.',
         content2: 'This privacy policy explains what information is collected when using the application, how it is used, and how it is protected.'
       },
       dataCollection: {

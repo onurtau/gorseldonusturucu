@@ -1,5 +1,5 @@
-import React from 'react';
-import { ImageIcon, Sparkles, Globe, ArrowLeft, Download } from 'lucide-react';
+import React, { useState } from 'react';
+import { Globe, ArrowLeft, Download, Menu, X } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import useAuthStore from '../../store/useAuthStore';
 import * as trialManager from '../../services/trialManager';
@@ -7,6 +7,7 @@ import * as trialManager from '../../services/trialManager';
 const PublicHeader = ({ onLoginClick, onRegisterClick, onBackToLanding }) => {
   const { t, language, changeLanguage } = useLanguage();
   const { user } = useAuthStore();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   
   // Trial bilgisini al (sadece kayıtsız kullanıcılar için)
   const remainingTrials = !user ? trialManager.getRemainingTrials(user) : null;
@@ -42,16 +43,12 @@ const PublicHeader = ({ onLoginClick, onRegisterClick, onBackToLanding }) => {
             <div className="flex items-center space-x-1.5">
               <img 
                 src={logoSrc} 
-                alt="Logo" 
-                className="w-8 h-8 sm:w-11 sm:h-11"
+                alt="Zylorpix" 
+                className="w-10 h-10 sm:w-12 sm:h-12"
               />
-              <div>
-                <h1 className="text-lg font-bold gradient-text flex items-center gap-1.5">
-                  {t('header.title')}
-                  <Sparkles className="w-3.5 h-3.5 text-yellow-400" />
-                </h1>
-                <p className="text-[11px] text-gray-600 hidden sm:block">{t('header.subtitle')}</p>
-              </div>
+              <h1 className="text-lg sm:text-xl font-bold gradient-text">
+                Zylorpix
+              </h1>
             </div>
           </div>
 
@@ -87,23 +84,63 @@ const PublicHeader = ({ onLoginClick, onRegisterClick, onBackToLanding }) => {
               <span className="font-medium text-sm">{t('header.download')}</span>
             </button>
 
-            {/* Login Button */}
+            {/* Login Button - Desktop Only */}
             <button
               onClick={onLoginClick}
-              className="hidden sm:block px-3 sm:px-4 py-1.5 sm:py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors font-medium text-xs sm:text-sm"
+              className="hidden md:block px-3 sm:px-4 py-1.5 sm:py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors font-medium text-xs sm:text-sm"
             >
               {t('header.login')}
             </button>
 
-            {/* Register Button */}
+            {/* Register Button - Desktop Only */}
             <button
               onClick={onRegisterClick}
-              className="px-3 sm:px-5 py-1.5 sm:py-2 bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white rounded-lg font-semibold transition-all shadow-lg shadow-primary-500/20 text-xs sm:text-sm"
+              className="hidden md:block px-3 sm:px-5 py-1.5 sm:py-2 bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white rounded-lg font-semibold transition-all shadow-lg shadow-primary-500/20 text-xs sm:text-sm"
+            >
+              {language === 'tr' ? 'Premium\'a Geç' : 'Upgrade to Premium'}
+            </button>
+
+            {/* Hamburger Menu Button - Mobile Only */}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="md:hidden p-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
+              aria-label="Menu"
+            >
+              {isMobileMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Menu Dropdown - Mobile Only */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden border-t border-gray-200 mt-2 pt-2 pb-3 px-2 space-y-2">
+            {/* Login Button */}
+            <button
+              onClick={() => {
+                onLoginClick();
+                setIsMobileMenuOpen(false);
+              }}
+              className="w-full text-left px-4 py-2.5 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors font-medium text-sm"
+            >
+              {t('header.login')}
+            </button>
+
+            {/* Register/Premium Button */}
+            <button
+              onClick={() => {
+                onRegisterClick();
+                setIsMobileMenuOpen(false);
+              }}
+              className="w-full px-4 py-2.5 bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white rounded-lg font-semibold transition-all shadow-lg shadow-primary-500/20 text-sm"
             >
               {language === 'tr' ? 'Premium\'a Geç' : 'Upgrade to Premium'}
             </button>
           </div>
-        </div>
+        )}
       </div>
     </header>
   );

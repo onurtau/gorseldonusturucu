@@ -424,7 +424,7 @@ const SettingsModal = () => {
                   <div className="w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-600 rounded-2xl mx-auto mb-4 flex items-center justify-center">
                     <Settings className="w-10 h-10 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Görsel Dönüştürücü</h3>
+                  <h3 className="text-2xl font-bold text-white mb-2">Zylorpix</h3>
                   <p className="text-gray-400 mb-6">{t('settings.version')} 1.0.0</p>
                   
                   <div className="max-w-md mx-auto space-y-4 text-sm text-gray-400">
