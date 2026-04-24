@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Globe, ArrowLeft, Download, Menu, X } from 'lucide-react';
+import { Globe, ArrowLeft, Download, Menu, X, Crown } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import useAuthStore from '../../store/useAuthStore';
 import * as trialManager from '../../services/trialManager';
@@ -124,20 +124,32 @@ const PublicHeader = ({ onLoginClick, onRegisterClick, onBackToLanding }) => {
                 onLoginClick();
                 setIsMobileMenuOpen(false);
               }}
-              className="w-full text-left px-4 py-2.5 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors font-medium text-sm"
+              className="w-full px-4 py-2.5 border-2 border-primary-600 text-primary-600 hover:bg-primary-50 rounded-lg font-semibold transition-all text-sm"
             >
               {t('header.login')}
             </button>
 
-            {/* Register/Premium Button */}
+            {/* Register Button */}
             <button
               onClick={() => {
                 onRegisterClick();
                 setIsMobileMenuOpen(false);
               }}
-              className="w-full px-4 py-2.5 bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white rounded-lg font-semibold transition-all shadow-lg shadow-primary-500/20 text-sm"
+              className="w-full px-4 py-2.5 border-2 border-blue-600 text-blue-600 hover:bg-blue-50 rounded-lg font-semibold transition-all text-sm"
             >
-              {language === 'tr' ? 'Premium\'a Geç' : 'Upgrade to Premium'}
+              {language === 'tr' ? 'Kayıt Ol' : 'Sign Up'}
+            </button>
+
+            {/* Premium Button */}
+            <button
+              onClick={() => {
+                onRegisterClick();
+                setIsMobileMenuOpen(false);
+              }}
+              className="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-white rounded-lg font-semibold transition-all shadow-lg shadow-yellow-500/30 text-sm"
+            >
+              <Crown className="w-5 h-5" />
+              Premium
             </button>
           </div>
         )}
