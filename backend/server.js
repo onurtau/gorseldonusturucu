@@ -81,6 +81,17 @@ app.post('/api/convert', upload.single('file'), async (req, res) => {
     // Sharp conversion pipeline
     let pipeline = sharp(inputPath);
 
+    // Get image metadata to detect color space
+    const metadata = await pipeline.metadata();
+
+    // CMYK to RGB conversion for formats that don't support CMYK
+    // AVIF, WebP, PNG require RGB color space
+    const rgbOnlyFormats = ['avif', 'webp', 'png', 'gif'];
+    if (metadata.space === 'cmyk' && rgbOnlyFormats.includes(format.toLowerCase())) {
+      console.log(`[CONVERT] CMYK detected, converting to RGB for ${format} format`);
+      pipeline = pipeline.toColorspace('srgb');
+    }
+
     // Resize if dimensions provided
     if (width || height) {
       pipeline = pipeline.resize(width, height, {
